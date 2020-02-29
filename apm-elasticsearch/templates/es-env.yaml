@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.namespace }}-es-yml-config
+  namespace: {{ .Values.namespace }}
+data:
+  es-yml-config: |-
+    http.host: 0.0.0.0
+
+    # Uncomment the following lines for a production cluster deployment
+    # transport.host: 0.0.0.0
+    # discovery.zen.minimum_master_nodes: 1

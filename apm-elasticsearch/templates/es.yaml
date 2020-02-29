@@ -1,0 +1,54 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.namespace }}-es
+spec:
+  replicas: {{ .Values.esReplicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.namespace }}-es-pod
+    spec:
+      containers:
+      - name: {{ .Values.namespace }}-container
+        image: {{ .Values.esImageName }}:{{ .Chart.AppVersion }}
+        imagePullPolicy: IfNotPresent
+        # securityContext:
+        #   runAsUser: 1000
+        # command: ["/bin/bash", "-c", "tail -f /etc/hosts"]
+        ports:
+        - name: {{ .Values.namespace }}-es-9200
+          containerPort: 9200
+        - name: {{ .Values.namespace }}-es-9300
+          containerPort: 9300
+        volumeMounts:
+        - name: es-yml-config
+          mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
+          subPath: elasticsearch.yml
+        - name: es-jvm-config
+          mountPath: /usr/share/elasticsearch/config/jvm.options
+          subPath: jvm.options 
+        - name: es-data
+          mountPath: /usr/share/elasticsearch/config/data
+      volumes:
+      - name: {{ .Values.namespace }}-es-yml-config
+        configMap:
+          name: es-yml-config
+          items:
+          - key: es-yml-config
+            path: elasticsearch.yml
+      - name: {{ .Values.namespace }}-es-jvm-config
+        configMap:
+          name: es-jvm-config
+          items:
+          - key: es-jvm-config
+            path: jvm.options
+      - name: es-data
+        persistentVolumeClaim:
+          claimName: es-pvc
+
+      tolerations:
+      - key: "key"
+        operator: "Equal"
+        value: "test02"
+        effect: "PreferNoSchedule"
