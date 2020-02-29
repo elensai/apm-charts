@@ -33,13 +33,13 @@ spec:
       volumes:
       - name: {{ .Values.namespace }}-es-yml-config
         configMap:
-          name: es-yml-config
+          name: {{ .Values.namespace }}-es-yml-config
           items:
           - key: es-yml-config
             path: elasticsearch.yml
       - name: {{ .Values.namespace }}-es-jvm-config
         configMap:
-          name: es-jvm-config
+          name: {{ .Values.namespace }}-es-jvm-config
           items:
           - key: es-jvm-config
             path: jvm.options
