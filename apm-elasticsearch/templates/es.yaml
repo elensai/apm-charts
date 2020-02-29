@@ -17,9 +17,9 @@ spec:
         #   runAsUser: 1000
         # command: ["/bin/bash", "-c", "tail -f /etc/hosts"]
         ports:
-        - name: {{ .Values.namespace }}-es-9200
+        - name: es-9200
           containerPort: 9200
-        - name: {{ .Values.namespace }}-es-9300
+        - name: es-9300
           containerPort: 9300
         volumeMounts:
         - name: es-yml-config

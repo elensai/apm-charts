@@ -9,10 +9,10 @@ spec:
   ports:
   - name: p-9200
     port: 9200
-    targetPort: {{ .Values.namespace }}-es-9200
+    targetPort: es-9200
   - name: p-9300
     port: 9300
-    targetPort: {{ .Values.namespace }}-es-9300
+    targetPort: es-9300
   selector:
     app: {{ .Values.namespace }}-es-pod
 
