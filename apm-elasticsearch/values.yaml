@@ -23,7 +23,7 @@ storagePath: /nfsdata/apm-elasticsearch/es
 esCapacity: 5Gi
 
 # 镜像名
-esImageName: registry.elensdata.com/elensai/es530
+esImageName: registry.elensdata.com/apm/elasticsearch
 
 esReplicaCount: 1
 
