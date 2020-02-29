@@ -22,10 +22,10 @@ spec:
         - name: es-9300
           containerPort: 9300
         volumeMounts:
-        - name: es-yml-config
+        - name: {{ .Values.namespace }}-es-yml-config
           mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           subPath: elasticsearch.yml
-        - name: es-jvm-config
+        - name: {{ .Values.namespace }}-es-jvm-config
           mountPath: /usr/share/elasticsearch/config/jvm.options
           subPath: jvm.options 
         - name: es-data
