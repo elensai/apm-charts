@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}-apm-elasticsearch-svc
+  name: {{ .Chart.Name }}-svc
   namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
   labels:
-    dep: {{ .Chart.Name }}-apm-elasticsearch-svc
+    dep: {{ .Chart.Name }}-svc
 spec:
   type: NodePort
   ports:
@@ -15,6 +15,6 @@ spec:
     port: 9300
     targetPort: es-9300
   selector:
-    app: {{ .Chart.Name }}-apm-elasticsearch-pod
+    app: {{ .Chart.Name }}-pod
 
 
