@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Chart.Name }}-yml-config
+  name: {{ .Chart.Name }}-ymlconfig
   namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 data:
   es-yml-config: |-

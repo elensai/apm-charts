@@ -2,7 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# 父级传入
+###父级传入
+# 命名空间
 namespace_bak: 
 
 
