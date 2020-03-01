@@ -4,7 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-apm-elasticsearch-dep
   namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 spec:
-  replicas: {{ .Values.esReplicaCount }}
+  replicas: {{ .Values.apmElasticsearchReplicaCount }}
   template:
     metadata:
       labels:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: {{ .Values.esImageName }}:{{ .Values.apmElasticsearchAppVersion }}
+        image: {{ .Values.apmElasticsearchImageName }}:{{ .Values.apmElasticsearchAppVersion }}
         imagePullPolicy: IfNotPresent
         # securityContext:
         #   runAsUser: 1000
