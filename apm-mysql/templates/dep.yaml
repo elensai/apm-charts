@@ -20,7 +20,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: "MYSQL_ROOT_PASSWORD"
-              value: {{ .Values.mysqlrootpasswd | quote }}
+              value: {{ .Values.apmMysqlRootPasswd | quote }}
           ports:
             - name: mysql-port
               containerPort: 3306
@@ -33,10 +33,10 @@ spec:
       volumes:
         - name: mysqldb
           persistentVolumeClaim:
-            claimName: mysql-claim
+            claimName: {{ .Chart.Name }}-pvc
         - name: mysqldcnf
           configMap:
-            name: mysqldcnf
+            name: {{ .Chart.Name }}-mysqldcnf
             items:
               - key: mysqldcnf-config
                 path: mysqld.cnf

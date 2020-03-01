@@ -18,10 +18,19 @@ app_namespace_bak:
 
 apmMysqlReplicaCount: 1
 
+apmMysqlStorageServer: 192.168.1.163
+
+apmMysqlStoragePath: /nfsdata/apm-mysql
+
+apmMysqlCapacity: 1Gi
+
+
 apmMysqlImage:
-  repository: registry.elensdata.com/apm/mysql:5.7.28
+  repository: registry.elensdata.com/apm/mysql
   pullPolicy: IfNotPresent
   imagePullSecrets: []
+
+
 
 apmMysqlRootPasswd: pw123456
 

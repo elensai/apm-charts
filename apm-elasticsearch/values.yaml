@@ -13,7 +13,7 @@ app_namespace_bak:
 apmElasticsearchStorageServer: 192.168.1.163
 
 # 需要程序创建对应目录（todo）
-apmElasticsearchStoragePath: /nfsdata/apm-elasticsearch/es
+apmElasticsearchStoragePath: /nfsdata/apm-elasticsearch
 
 # 存储空间
 apmElasticsearchCapacity: 5Gi
