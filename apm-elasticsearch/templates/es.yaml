@@ -1,17 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Values.namespace }}-es
+  name: {{ .Chart.Name }}-apm-elasticsearch-dep
+  namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 spec:
   replicas: {{ .Values.esReplicaCount }}
   template:
     metadata:
       labels:
-        app: {{ .Values.namespace }}-es-pod
+        app: {{ .Chart.Name }}-apm-elasticsearch-pod
+      namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
     spec:
       containers:
-      - name: {{ .Values.namespace }}-container
-        image: {{ .Values.esImageName }}:{{ .Chart.AppVersion }}
+      - name: container
+        image: {{ .Values.esImageName }}:{{ .Values.apmElasticsearchAppVersion }}
         imagePullPolicy: IfNotPresent
         # securityContext:
         #   runAsUser: 1000
@@ -22,33 +24,33 @@ spec:
         - name: es-9300
           containerPort: 9300
         volumeMounts:
-        - name: {{ .Values.namespace }}-es-yml-config
+        - name: {{ .Chart.Name }}-apm-elasticsearch-yml-config
           mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           subPath: elasticsearch.yml
-        - name: {{ .Values.namespace }}-es-jvm-config
+        - name: {{ .Chart.Name }}-apm-elasticsearch-jvmconfig
           mountPath: /usr/share/elasticsearch/config/jvm.options
           subPath: jvm.options 
         - name: es-data
           mountPath: /usr/share/elasticsearch/config/data
       volumes:
-      - name: {{ .Values.namespace }}-es-yml-config
+      - name: {{ .Chart.Name }}-apm-elasticsearch-yml-config
         configMap:
-          name: {{ .Values.namespace }}-es-yml-config
+          name: {{ .Chart.Name }}-apm-elasticsearch-yml-config
           items:
           - key: es-yml-config
             path: elasticsearch.yml
-      - name: {{ .Values.namespace }}-es-jvm-config
+      - name: {{ .Chart.Name }}-apm-elasticsearch-jvmconfig
         configMap:
-          name: {{ .Values.namespace }}-es-jvm-config
+          name: {{ .Chart.Name }}-apm-elasticsearch-jvmconfig
           items:
           - key: es-jvm-config
             path: jvm.options
       - name: es-data
         persistentVolumeClaim:
-          claimName: es-pvc
+          claimName: apm-elasticsearch-pvc
 
-      tolerations:
-      - key: "key"
-        operator: "Equal"
-        value: "test02"
-        effect: "PreferNoSchedule"
+      # tolerations:
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "test02"
+      #   effect: "PreferNoSchedule"

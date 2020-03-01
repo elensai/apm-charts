@@ -2,7 +2,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: {{ .Values.namespace }}-es-sc
+  name: {{ .Chart.Name }}-apm-elasticsearch-sc
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 
@@ -11,29 +11,30 @@ volumeBindingMode: WaitForFirstConsumer
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ .Values.namespace }}-es-pv
+  name: {{ .Chart.Name }}-apm-elasticsearch-pv
 spec:
   capacity:
-    storage:  {{ .Values.esCapacity }}
+    storage:  {{ .Values.apmElasticsearchCapacity }}
   volumeMode: Filesystem 
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: {{ .Values.namespace }}-es-sc
+  storageClassName: {{ .Chart.Name }}-apm-elasticsearch-sc
   nfs: 
-    path: {{ .Values.storagePath }}
-    server: {{ .Values.storageServer }}
+    path: {{ .Values.apmElasticsearchStoragePath }}
+    server: {{ .Values.apmElasticsearchStorageServer }}
 
 ---
 
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: es-pvc
+  name: apm-elasticsearch-pvc
+  namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.esCapacity }}
-  storageClassName: {{ .Values.namespace }}-es-sc
+      storage: {{ .Values.apmElasticsearchCapacity }}
+  storageClassName: {{ .Chart.Name }}-apm-elasticsearch-sc

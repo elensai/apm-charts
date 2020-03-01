@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-svc
+  labels:
+    dep: mysql-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+      targetPort: mysql-port
+  selector:
+    app: mysql-pod
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.namespace }}-mysqldep
+  labels:
+    app: {{ .Values.namespace }}-mysqldep
+spec:
+  replicas: {{ .Values.mysqlReplicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.namespace }}-mysql-pod
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.namespace }}-mysql-pod
+    spec:
+      containers:
+        - name: mysql-pod
+          image: {{ .Values.image.repository }}:{{ .Chart.AppVersion }}
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: "MYSQL_ROOT_PASSWORD"
+              value: {{ .Values.mysqlrootpasswd | quote }}
+          ports:
+            - name: mysql-port
+              containerPort: 3306
+          volumeMounts:
+            - mountPath: "/var/lib/mysql"
+              name: mysqldb
+            - name: mysqldcnf
+              mountPath: /etc/mysql/mysql.conf.d/mysqld.cnf
+              subPath: mysqld.cnf
+      volumes:
+        - name: mysqldb
+          persistentVolumeClaim:
+            claimName: mysql-claim
+        - name: mysqldcnf
+          configMap:
+            name: mysqldcnf
+            items:
+              - key: mysqldcnf-config
+                path: mysqld.cnf
+      # tolerations:
+      #   - key: "key"
+      #     operator: "Equal"
+      #     value: "test02"
+      #     effect: "PreferNoSchedule"
+
+
