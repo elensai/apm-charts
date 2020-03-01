@@ -4,7 +4,7 @@
 
 ###父级传入
 # 命名空间
-namespace_bak: 
+app_namespace_bak: 
 
 
 
@@ -20,8 +20,6 @@ apmElasticsearchCapacity: 5Gi
 
 # 镜像名
 apmElasticsearchImageName: registry.elensdata.com/apm/elasticsearch
-# 镜像版本
-apmElasticsearchAppVersion: 5.3.0
 
 apmElasticsearchReplicaCount: 1
 

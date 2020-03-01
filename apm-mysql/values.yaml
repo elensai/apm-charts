@@ -10,16 +10,25 @@
 # myint: 4
 
 
-namespace: apm-mysql
+###父级传入
+# 命名空间
+app_namespace_bak: 
 
-mysqlReplicaCount: 1
 
-image:
+
+apmMysqlReplicaCount: 1
+
+apmMysqlImage:
   repository: registry.elensdata.com/apm/mysql:5.7.28
   pullPolicy: IfNotPresent
   imagePullSecrets: []
 
-mysqlRootPasswd: pw123456
+apmMysqlRootPasswd: pw123456
+
+apmMysqlService:
+  # type: ClusterIP
+  type: NodePort
+  port: 3306
 
 # serviceAccount: 
 #   # Specifies whether a service account should be created
@@ -39,11 +48,7 @@ mysqlRootPasswd: pw123456
 #   # runAsNonRoot: true
 #   # runAsUser: 1000
 
-service:
-  # type: ClusterIP
-  type: NodePort
-  port: 3306
-  nodePort: 
+
 
 # ingress:
 #   enabled: false

@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}-dep
-  namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
+  namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 spec:
   replicas: {{ .Values.apmElasticsearchReplicaCount }}
   template:
     metadata:
       labels:
         app: {{ .Chart.Name }}-pod
-      namespace: {{ if .Values.namespace_bak }}{{ .Values.namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
+      namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
     spec:
       containers:
       - name: container
-        image: {{ .Values.apmElasticsearchImageName }}:{{ .Values.apmElasticsearchAppVersion }}
+        image: {{ .Values.apmElasticsearchImageName }}:{{ .Chart.AppVersion }}
         imagePullPolicy: IfNotPresent
         # securityContext:
         #   runAsUser: 1000

@@ -1,18 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-svc
+  name: {{ .Chart.Name }}-svc
   labels:
-    app: mysql-svc
+    app: {{ .Chart.Name }}-svc
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.apmMysqlService.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.apmMysqlService.port }}
       targetPort: http
       protocol: TCP
       name: http
-      {{- if .Values.service.nodePort }}
-      nodePort: {{ .Values.service.nodePort }}
-      {{- end }}
   selector:
-    app: mysql-pod
+    app: {{ .Chart.Name }}-pod
