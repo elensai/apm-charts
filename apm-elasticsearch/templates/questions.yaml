@@ -1,0 +1,5 @@
+questions:
+- variable: namespace_bak
+  description: "定义命名空间，可以为空；如果填写，必须与昊天系统部署时的namespace保持一致"
+  type: string
+  default: 

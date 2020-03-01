@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-namespace_bak: sssx
+namespace_bak: 
 
 # 存储服务
 apmElasticsearchStorageServer: 192.168.1.163
@@ -15,7 +15,7 @@ apmElasticsearchCapacity: 5Gi
 
 # 镜像名
 apmElasticsearchImageName: registry.elensdata.com/apm/elasticsearch
-
+# 镜像版本
 apmElasticsearchAppVersion: 5.3.0
 
 apmElasticsearchReplicaCount: 1
