@@ -4,14 +4,14 @@ metadata:
   name: {{ .Chart.Name }}-pv
 spec:
   capacity:
-    storage: {{ .Values.apmMysqlCapacity }}
+    storage: {{ .Values.apm_Capacity }}
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: {{ .Chart.Name }}-sc
   nfs:
-    path: {{ .Values.apmMysqlStoragePath }}
-    server: {{ .Values.apmMysqlStorageServer }}
+    path: {{ .Values.apm_StoragePath }}
+    server: {{ .Values.apm_StorageServer }}
 ---
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
@@ -29,5 +29,5 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.apmMysqlCapacity }}
+      storage: {{ .Values.apm_Capacity }}
   storageClassName: {{ .Chart.Name }}-sc

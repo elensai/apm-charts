@@ -12,7 +12,6 @@ spec:
       app: {{ .Chart.Name }}-pod
   template:
     metadata:
-      namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
       labels:
         app: {{ .Chart.Name }}-pod
     spec:

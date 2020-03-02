@@ -5,9 +5,9 @@ metadata:
   labels:
     app: {{ .Chart.Name }}-svc
 spec:
-  type: {{ .Values.apmMysqlService.type }}
+  type: {{ .Values.apm_Service.type }}
   ports:
-    - port: {{ .Values.apmMysqlService.port }}
+    - port: {{ .Values.apm_Service.port }}
       targetPort: http
       protocol: TCP
       name: http

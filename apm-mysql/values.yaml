@@ -16,25 +16,25 @@ app_namespace_bak:
 
 
 
-apmMysqlReplicaCount: 1
+apm_ReplicaCount: 1
 
-apmMysqlStorageServer: 192.168.1.163
+apm_StorageServer: 192.168.1.163
 
-apmMysqlStoragePath: /nfsdata/apm-mysql
+apm_StoragePath: /nfsdata/apm-mysql
 
-apmMysqlCapacity: 1Gi
+apm_Capacity: 1Gi
 
 
-apmMysqlImage:
+apm_Image:
   repository: registry.elensdata.com/apm/mysql
   pullPolicy: IfNotPresent
   imagePullSecrets: []
 
 
 
-apmMysqlRootPasswd: pw123456
+apm_RootPasswd: pw123456
 
-apmMysqlService:
+apm_Service:
   # type: ClusterIP
   type: NodePort
   port: 3306

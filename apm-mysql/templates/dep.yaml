@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}-dep
+  namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
   labels:
     app: {{ .Chart.Name }}-dep
 spec:
-  replicas: {{ .Values.apmMysqlReplicaCount }}
+  replicas: {{ .Values.apm_ReplicaCount }}
   selector:
     matchLabels:
       app: {{ .Chart.Name }}-pod
@@ -16,11 +17,11 @@ spec:
     spec:
       containers:
         - name: con
-          image: {{ .Values.apmMysqlImage.repository }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.apm_Image.repository }}:{{ .Chart.AppVersion }}
           imagePullPolicy: IfNotPresent
           env:
             - name: "MYSQL_ROOT_PASSWORD"
-              value: {{ .Values.apmMysqlRootPasswd | quote }}
+              value: {{ .Values.apm_RootPasswd | quote }}
           ports:
             - name: mysql-port
               containerPort: 3306
