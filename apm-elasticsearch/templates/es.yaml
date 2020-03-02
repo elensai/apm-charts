@@ -1,15 +1,20 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}-dep
   namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
+  labels:
+    app: {{ .Chart.Name }}-dep
 spec:
   replicas: {{ .Values.apmElasticsearchReplicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pod
   template:
     metadata:
+      namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
       labels:
         app: {{ .Chart.Name }}-pod
-      namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
     spec:
       containers:
       - name: container
@@ -47,7 +52,7 @@ spec:
             path: jvm.options
       - name: es-data
         persistentVolumeClaim:
-          claimName: pvc
+          claimName: {{ .Chart.Name }}-pvc
 
       # tolerations:
       # - key: "key"
