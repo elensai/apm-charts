@@ -2,6 +2,12 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+
+apm-elasticsearch:
+  app_namespace_bak: app-zhi
+
+
+
 replicaCount: 1
 
 image:
