@@ -14,6 +14,7 @@ spec:
     path: {{ .Values.apm_StoragePath }}{{ .Values.app_namespace_bak }}/{{ .Chart.Name }}
     {{- else }}
     path: {{ .Values.apm_StoragePath }}{{ .Chart.Name }}
+    {{- end }}
     server: {{ .Values.apm_StorageServer }}
 ---
 kind: StorageClass
@@ -33,4 +34,6 @@ spec:
   resources:
     requests:
       storage: {{ .Values.apm_Capacity }}
-  storageClassName: {{ if .Values.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Values.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc{{ end }}
+  storageClassName: ttt
+
+  # {{ if .Values.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Values.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc{{ end }}
