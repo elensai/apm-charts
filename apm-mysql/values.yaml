@@ -20,7 +20,7 @@ apm_ReplicaCount: 1
 
 apm_StorageServer: 192.168.1.163
 
-apm_StoragePath: /nfsdata/apm-mysql
+apm_StoragePath: /nfsdata/
 
 apm_Capacity: 1Gi
 

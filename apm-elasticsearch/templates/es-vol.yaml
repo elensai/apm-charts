@@ -11,7 +11,7 @@ volumeBindingMode: WaitForFirstConsumer
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ .Chart.Name }}-pv
+  name: {{ if .Values.app_namespace_bak }}{{ .Chart.Name }}-pv-{{ .Values.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-pv{{ end }}
 spec:
   capacity:
     storage:  {{ .Values.apm_Capacity }}
