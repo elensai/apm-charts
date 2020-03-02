@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Chart.Name }}-dep
 spec:
-  replicas: {{ .Values.apmElasticsearchReplicaCount }}
+  replicas: {{ .Values.apm_ReplicaCount }}
   selector:
     matchLabels:
       app: {{ .Chart.Name }}-pod
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: {{ .Values.apmElasticsearchImageName }}:{{ .Chart.AppVersion }}
+        image: {{ .Values.apm_ImageName }}:{{ .Chart.AppVersion }}
         imagePullPolicy: IfNotPresent
         # securityContext:
         #   runAsUser: 1000

@@ -14,15 +14,19 @@ metadata:
   name: {{ .Chart.Name }}-pv
 spec:
   capacity:
-    storage:  {{ .Values.apmElasticsearchCapacity }}
+    storage:  {{ .Values.apm_Capacity }}
   volumeMode: Filesystem 
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: {{ .Chart.Name }}-sc
   nfs: 
-    path: {{ .Values.apmElasticsearchStoragePath }}
-    server: {{ .Values.apmElasticsearchStorageServer }}
+    {{- if .Values.app_namespace_bak }}
+    path: {{ .Values.apm_StoragePath }}{{ .Values.app_namespace_bak }}/{{ .Chart.Name }}
+    {{- else }}
+    path: {{ .Values.apm_StoragePath }}{{ .Chart.Name }}
+    {{- end }}
+    server: {{ .Values.apm_StorageServer }}
 
 ---
 
@@ -36,5 +40,5 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.apmElasticsearchCapacity }}
+      storage: {{ .Values.apm_Capacity }}
   storageClassName: {{ .Chart.Name }}-sc

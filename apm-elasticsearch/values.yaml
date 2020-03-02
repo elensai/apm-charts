@@ -10,18 +10,18 @@ app_namespace_bak:
 
 
 # 存储服务
-apmElasticsearchStorageServer: 192.168.1.163
+apm_StorageServer: 192.168.1.163
 
-# 需要程序创建对应目录（todo）
-apmElasticsearchStoragePath: /nfsdata/apm-elasticsearch
+# 需要程序创建对应目录，这里只填写根目录
+apm_StoragePath: /nfsdata/
 
 # 存储空间
-apmElasticsearchCapacity: 5Gi
+apm_Capacity: 5Gi
 
 # 镜像名
-apmElasticsearchImageName: registry.elensdata.com/apm/elasticsearch
+apm_ImageName: registry.elensdata.com/apm/elasticsearch
 
-apmElasticsearchReplicaCount: 1
+apm_ReplicaCount: 1
 
 
 
