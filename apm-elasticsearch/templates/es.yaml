@@ -29,22 +29,22 @@ spec:
         - name: es-9300
           containerPort: 9300
         volumeMounts:
-        - name: {{ .Chart.Name }}-ymlconfig
+        - name: ymlconfig
           mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           subPath: elasticsearch.yml
-        - name: {{ .Chart.Name }}-jvmconfig
+        - name: jvmconfig
           mountPath: /usr/share/elasticsearch/config/jvm.options
           subPath: jvm.options 
         - name: es-data
           mountPath: /usr/share/elasticsearch/config/data
       volumes:
-      - name: {{ .Chart.Name }}-ymlconfig
+      - name: ymlconfig
         configMap:
           name: {{ .Chart.Name }}-ymlconfig
           items:
           - key: es-yml-config
             path: elasticsearch.yml
-      - name: {{ .Chart.Name }}-jvmconfig
+      - name: jvmconfig
         configMap:
           name: {{ .Chart.Name }}-jvmconfig
           items:
