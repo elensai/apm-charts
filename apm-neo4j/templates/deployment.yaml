@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: con
-        image: {{ .Values.neo4jimage }}:{{ .Chart.AppVersion }}
+        image: {{ .Values.apm_neo4jimage }}:{{ .Chart.AppVersion }}
         imagePullPolicy: IfNotPresent
         ports:
         - name: p7474
