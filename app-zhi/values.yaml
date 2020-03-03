@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 
-# global:
-#   app_namespace_bak: app-zhi
+global:
+  app_namespace_bak: 
 
 
 
