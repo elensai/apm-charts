@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}-dep
-  namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
+  namespace: {{ if .Values.global.app_namespace_bak }}{{ .Values.global.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
   labels:
     app: {{ .Chart.Name }}-dep
 spec:

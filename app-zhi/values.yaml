@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-# apm-elasticsearch:
+# global:
 #   app_namespace_bak: app-zhi
 
 
@@ -13,6 +13,11 @@ replicaCount: 1
 image:
   repository: nginx
   pullPolicy: IfNotPresent
+
+
+
+
+
 
 imagePullSecrets: []
 nameOverride: ""

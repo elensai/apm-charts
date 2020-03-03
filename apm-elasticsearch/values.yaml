@@ -4,7 +4,8 @@
 
 ###父级必须传入
 # 命名空间
-app_namespace_bak: xxx
+global:
+  app_namespace_bak: xxx
 
 
 

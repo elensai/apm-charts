@@ -2,8 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}-jvmconfig
-  namespace: {{ if .Values.app_namespace_bak }}{{ .Values.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
+  namespace: {{ if .Values.global.app_namespace_bak }}{{ .Values.global.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 data:
+  ee: |
+    {{- range tuple "small" "medium" "large" }}
+    - {{ . }}
+    {{- end }}
   es-jvm-config: |-
     ## JVM configuration
     ################################################################
