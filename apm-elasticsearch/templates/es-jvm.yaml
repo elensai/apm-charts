@@ -4,10 +4,6 @@ metadata:
   name: {{ .Chart.Name }}-jvmconfig
   namespace: {{ if .Values.global.app_namespace_bak }}{{ .Values.global.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 data:
-  ee: |
-    {{- range tuple "small" "medium" "large" }}
-    - {{ . }}
-    {{- end }}
   es-jvm-config: |-
     ## JVM configuration
     ################################################################
