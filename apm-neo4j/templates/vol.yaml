@@ -10,7 +10,7 @@ volumeBindingMode: WaitForFirstConsumer
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}{{ end }}
+  name: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-pv-{{ .Release.Namespace }}-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-pv-{{ .Release.Namespace }}{{ end }}
 spec:
   capacity:
     storage: {{ .Values.apm_neo4jdata }}
