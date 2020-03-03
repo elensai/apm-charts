@@ -35,7 +35,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: {{ .Chart.Name }}-pvc
   namespace: {{ .Release.Namespace }}
-  # namespace: {{ if .Values.global.app_namespace_bak }}{{ .Values.global.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
 spec:
   accessModes:
   - ReadWriteOnce

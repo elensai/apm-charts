@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-###父级必须传入
-# 命名空间
+###父级传入
+# 备用命名空间
 # global:
-#   app_namespace_bak: xxx
+#   app_namespace_bak:
 
 
 

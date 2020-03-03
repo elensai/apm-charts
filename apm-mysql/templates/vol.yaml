@@ -1,26 +1,26 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-pv-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-pv{{ end }}
+  name: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-pv-{{ .Release.Namespace }}-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}{{ end }}
 spec:
   capacity:
     storage: {{ .Values.apm_Capacity }}
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc{{ end }}
+  storageClassName: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}{{ end }}
   nfs:
     {{- if .Values.global.app_namespace_bak }}
-    path: {{ .Values.apm_StoragePath }}{{ .Values.global.app_namespace_bak }}/{{ .Chart.Name }}
+    path: {{ .Values.apm_StoragePath }}{{ .Release.Namespace }}/{{ .Values.global.app_namespace_bak }}/{{ .Chart.Name }}
     {{- else }}
-    path: {{ .Values.apm_StoragePath }}{{ .Chart.Name }}
+    path: {{ .Values.apm_StoragePath }}{{ .Release.Namespace }}/{{ .Chart.Name }}
     {{- end }}
     server: {{ .Values.apm_StorageServer }}
 ---
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc{{ end }}
+  name: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}{{ end }}
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 ---
@@ -34,5 +34,5 @@ spec:
   resources:
     requests:
       storage: {{ .Values.apm_Capacity }}
-  storageClassName: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc{{ end }}
+  storageClassName: {{ if .Values.global.app_namespace_bak }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}-{{ .Values.global.app_namespace_bak }}{{ else }}{{ .Chart.Name }}-sc-{{ .Release.Namespace }}{{ end }}
   

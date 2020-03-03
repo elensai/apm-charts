@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}-mysqldcnf
-  namespace: {{ if .Values.global.app_namespace_bak }}{{ .Values.global.app_namespace_bak }}{{else}}{{ .Chart.Name }}{{end}}
+  namespace: {{ .Release.Namespace }}
 data:
   mysqldcnf-config: |-
     # Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.

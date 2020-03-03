@@ -3,15 +3,8 @@
 # Declare variables to be passed into your templates.
 
 
-# exports:
-#   data:
-#     myint: 3
-
-# myint: 4
-
-
 ###父级传入
-# 命名空间
+# 备用命名空间
 global:
   app_namespace_bak: 
 
