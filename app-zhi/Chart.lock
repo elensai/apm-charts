@@ -8,5 +8,8 @@ dependencies:
 - name: apm-neo4j
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-digest: sha256:bcc9b4d171e95826d5cfce58d931fdd50ccd54291dabf31622b28784688e0a09
-generated: "2020-03-03T16:15:17.368594+08:00"
+- name: apm-redis
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+digest: sha256:f3a13918d9d7538aa2393f0830dbf4e39317142b44c45def3022e85818dffdd3
+generated: "2020-03-03T18:30:26.333447+08:00"
