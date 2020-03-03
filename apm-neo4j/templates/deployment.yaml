@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-neo4j
+spec:
+  replicas: {{ .Values.apm_replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-neo4j
+    spec:
+      containers:
+      - name: con
+        image: {{ .Values.neo4jimage }}:{{ .Chart.AppVersion }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: p7474
+          containerPort: 7474
+        - name: p7687
+          containerPort: 7687
+        volumeMounts:
+        - mountPath: /data
+          name: neo4j-v
+      volumes:
+      - name: neo4j-v
+        persistentVolumeClaim:
+          claimName: {{ .Chart.Name }}-neo4j-claim
+      # tolerations:
+      #   - key: "key"
+      #     operator: "Equal"
+      #     value: "test02"
+      #     effect: "PreferNoSchedule"
+
+
