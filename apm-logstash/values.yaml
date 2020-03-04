@@ -1,0 +1,7 @@
+# Default values for apm-logstash.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+logstashimage: registry.elensdata.com/apm/logstash
+
+apm_logstashConfig: 
