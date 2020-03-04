@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-dep
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-pod
+    spec:
+      containers:
+        - name: con
+          image: {{ .Values.unoconvimage }}:{{ .Chart.AppVersion }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: unoconv-port
+              containerPort: 3000
+          env:
+            - name: PAYLOAD_MAX_SIZE
+              value: "104857600"
+            - name: TIMEOUT_SERVER
+              value: "600000"
+            - name: TIMEOUT_SOCKET
+              value: "620000"
+          # command: ["/bin/bash"]
+          # args: ["-c", "cd /var/www/build && npm run restart && pm2 -f logs"]
+          # envFrom:
+          #   - configMapRef:
+          #       name: app-env
