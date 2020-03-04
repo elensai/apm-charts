@@ -16,11 +16,11 @@ data:
       jdbc {
         type => "node_index"
 
-        jdbc_connection_string => "jdbc:mysql://mysql-svc:3306/gongan?useSSL=false"
+        jdbc_connection_string => "jdbc:mysql://apm-mysql-svc:3306/gongan?useSSL=false"
 
         jdbc_user => "root"
 
-        jdbc_password => "123456"
+        jdbc_password => "pw123456"
 
         jdbc_driver_library => "./logstash/config/mysql-connector-java-5.1.47.jar"
 
@@ -42,7 +42,10 @@ data:
 
         last_run_metadata_path => "../logstash_jdbc_last_run_node_index"
 
-        statement => "select o.*,m.name as model_name from think_object o left join think_model m on o.model_id = m.id  where o.update_time>:sql_last_value  order by update_time ASC"
+        # statement => "select o.*,m.name as model_name from think_object o left join think_model m on o.model_id = m.id  where o.update_time>:sql_last_value  order by update_time ASC"
+
+        # test
+        statement => "select * from think_object"
 
         schedule => "* * * * *"
       }
@@ -50,15 +53,15 @@ data:
     }
 
     filter {
-      json {
-        source => "data"
-      }
+      # json {
+      #   source => "data"
+      # }
     }
 
     output {
       if [type] == "node_index" {
         elasticsearch {
-          hosts => "zhitu-es-svc:9200"
+          hosts => "apm-elasticsearch-svc:9200"
           index => "node_index"
           document_type => "node"
           document_id => "%{id}"
