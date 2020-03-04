@@ -3,7 +3,10 @@ questions:
   description: "备用命名空间"
   type: string
   default: 
-- variable: testm
-  default: "<match pattern>\n  @type stdout\n</match>"
+- variable: testMultiline
+  default: |-
+    testfffff
+    fafdafdsaf
+    12323423
   type: multiline
   label: master config
