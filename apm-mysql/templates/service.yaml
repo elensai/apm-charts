@@ -9,7 +9,7 @@ spec:
   type: {{ .Values.apm_Service.type }}
   ports:
     - port: {{ .Values.apm_Service.port }}
-      targetPort: http
+      targetPort: mysql-port
       protocol: TCP
       name: http
   selector:
