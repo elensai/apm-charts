@@ -17,6 +17,7 @@ spec:
       - name: con
         image: {{ .Values.logstashimage }}:{{ .Chart.AppVersion }}
         imagePullPolicy: IfNotPresent
+        command: ["/bin/bash", "-c", "tail -f /etc/hosts"]
         volumeMounts:
         - mountPath: /user/apps/logstash/config/logstash.conf
           name: logstash-c
