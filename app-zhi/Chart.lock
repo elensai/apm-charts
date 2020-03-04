@@ -5,9 +5,6 @@ dependencies:
 - name: apm-mysql
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-- name: apm-mysql
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
 - name: apm-neo4j
   repository: http://192.168.1.244:22317/
   version: 0.1.0
@@ -17,5 +14,5 @@ dependencies:
 - name: apm-logstash
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-digest: sha256:97c908bc60aa8323765f870b75936c548b5a587d0f03b059b0dd744cc0ee8557
-generated: "2020-03-04T19:33:34.189134+08:00"
+digest: sha256:7f41ab37c3ea56f824c543a6864bc9dcf700b5ffe425f456113a35f9167667e1
+generated: "2020-03-04T20:15:51.380305+08:00"
