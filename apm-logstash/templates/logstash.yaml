@@ -5,6 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pod
   template:
     metadata:
       labels:
