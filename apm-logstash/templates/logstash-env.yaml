@@ -4,6 +4,8 @@ metadata:
   name: {{ .Chart.Name }}-logstash-config
   namespace: {{ .Release.Namespace }}
 data:
+  testm: |-
+{{ .Values.testm | indent 4 }}
   {{- if .Values.apm_logstashConfig }}
   apm_logstashConfig: |-
 {{ .Values.apm_logstashConfig | indent 4 }}
