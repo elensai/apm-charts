@@ -15,6 +15,8 @@ helm dep update app-zhi
 
 git add . ; git commit -m 'update'; git push origin master
 
+# ------
+
 # git add .; git commit -m 'fix'; 
 
 # helm package .
