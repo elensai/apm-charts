@@ -3,10 +3,3 @@ questions:
   description: "备用命名空间"
   type: string
   default: 
-- variable: testMultiline
-  default: |-
-    testfffff
-    fafdafdsaf
-    12323423
-  type: multiline
-  label: master config
