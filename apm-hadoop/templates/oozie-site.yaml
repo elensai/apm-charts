@@ -164,7 +164,7 @@ data:
 
         <property>
             <name>oozie.service.JPAService.jdbc.url</name>
-            <value>jdbc:mysql://mysql-svc:3306/oozie?createDatabaseIfNotExist=true</value>
+            <value>jdbc:mysql://apm-mysql-svc:3306/oozie?createDatabaseIfNotExist=true</value>
             <description>
                 JDBC URL.
             </description>

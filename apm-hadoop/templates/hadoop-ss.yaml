@@ -191,7 +191,8 @@ spec:
   - metadata:
       name: {{ .Chart.Name }}
     spec:
-      accessModes: [ "ReadWriteMany" ]
+      accessModes:
+      - "ReadWriteOnce"
       resources:
         requests:
           storage: {{ .Values.apm_Capacity }}

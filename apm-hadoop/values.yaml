@@ -7,11 +7,9 @@ global:
 
 databaseimage: registry.elensdata.com/apm/zhidatabase
 
-
 apm_StorageServer: 192.168.1.163
 apm_Capacity: 5Gi
 apm_StoragePath: /nfsdata/
-
 
 
 volumeinit: "true"
