@@ -33,9 +33,9 @@ spec:
   storageClassName: {{ if $app_namespace_bak }}{{ $chartName }}-sc-{{ $namespace }}-{{ $app_namespace_bak }}-{{ .num }}{{ else }}{{ $chartName }}-sc-{{ $namespace }}-{{ .num }}{{ end }}
   nfs:
     {{- if $app_namespace_bak }}
-    path: {{ $apm_StoragePath }}{{ $namespace }}/{{ $app_namespace_bak }}/{{ $chartName }}-{{ $chartName }}_ss-{{ .num }}
+    path: {{ $apm_StoragePath }}{{ $namespace }}/{{ $app_namespace_bak }}/{{ $chartName }}-{{ $chartName }}-ss-{{ .num }}
     {{- else }}
-    path: {{ $apm_StoragePath }}{{ $namespace }}/{{ $chartName }}-{{ $chartName }}_ss-{{ .num }}
+    path: {{ $apm_StoragePath }}{{ $namespace }}/{{ $chartName }}-{{ $chartName }}-ss-{{ .num }}
     {{- end }}
 
 
@@ -49,7 +49,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ $chartName }}-{{ $chartName }}_ss-{{ .num }}
+  name: {{ $chartName }}-{{ $chartName }}-ss-{{ .num }}
   namespace: {{ $namespace }}
 spec:
   accessModes:
