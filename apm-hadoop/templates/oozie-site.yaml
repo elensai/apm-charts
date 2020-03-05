@@ -5,6 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   oozie-site-config: |-
+    {{- $app_namespace_bak := .Values.global.app_namespace_bak }}
+    {{- $chartName := .Chart.Name }}
+    {{- $namespace := .Release.Namespace }}
     <?xml version="1.0"?>
     <!--
     Licensed to the Apache Software Foundation (ASF) under one
@@ -85,11 +88,11 @@ data:
 
         <property>
             <name>oozie.service.HadoopAccessorService.jobTracker.whitelist</name>
-            <value>web-1.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8032</value>
+            <value>{{ $chartName }}-ss-1.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8032</value>
         </property>
         <property>
             <name>oozie.service.HadoopAccessorService.jobTracker.whitelist</name>
-            <value>web-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8032</value>
+            <value>{{ $chartName }}-ss-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8032</value>
         </property>
 
         <property>

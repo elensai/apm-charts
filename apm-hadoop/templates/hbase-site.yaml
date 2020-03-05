@@ -46,11 +46,11 @@ data:
         {{- $lastnodeindex := .Values.lastnodeindex|int}}
           {{ range $key, $val := .Values.volumenum }}
             {{- if eq $key 0}}
-            {{- "<value>" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local,
+            {{- "<value>" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local,
             {{- else if and (gt $key 0) (lt $key $lastnodeindex) }}
-            {{- "" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local,
+            {{- "" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local,
             {{- else }}
-            {{- "" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local</value>
+            {{- "" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local</value>
             {{- end }}
           {{- end }}
       </property>

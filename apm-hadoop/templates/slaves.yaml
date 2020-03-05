@@ -5,7 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   slaves-config: |-
-    {{- $namespace := .Release.Namespace }} 
+    {{- $app_namespace_bak := .Values.global.app_namespace_bak }}
+    {{- $chartName := .Chart.Name }}
+    {{- $namespace := .Release.Namespace }}
     {{- range .Values.volumenum}}
-    web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local
+    {{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local
     {{- end }}

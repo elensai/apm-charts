@@ -5,6 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   mapred-site-config: |-
+    {{- $app_namespace_bak := .Values.global.app_namespace_bak }}
+    {{- $chartName := .Chart.Name }}
+    {{- $namespace := .Release.Namespace }}
     <?xml version="1.0"?>
     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
     <!--
@@ -31,13 +34,13 @@ data:
 
       <property>  
             <name>mapreduce.jobhistory.address</name>  
-            <value>web-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:10020</value>  
+            <value>{{ $chartName }}-ss-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:10020</value>  
       </property> 
 
 
       <property>  
           <name>mapreduce.jobhistory.webapp.address</name>
-          <value>web-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:19888</value>  
+          <value>{{ $chartName }}-ss-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:19888</value>  
       </property>
 
 

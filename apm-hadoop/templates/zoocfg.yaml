@@ -36,6 +36,6 @@ data:
 
     {{- $namespace := .Release.Namespace }}
     {{- range .Values.volumenum}}
-    server.{{ .num }}=web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2888:3888
+    server.{{ .num }}={{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2888:3888
     {{- end }}
 

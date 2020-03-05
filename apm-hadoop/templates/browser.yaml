@@ -11,7 +11,7 @@ spec:
       port: 50070
       targetPort: 50070
   selector:
-    statefulset.kubernetes.io/pod-name: web-0
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-0
 
 ---
 
@@ -28,7 +28,7 @@ spec:
       port: 50070
       targetPort: 50070
   selector:
-    statefulset.kubernetes.io/pod-name: web-2
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-2
 
 ---
 
@@ -51,7 +51,7 @@ spec:
       port: 18089
       targetPort: 18089
   selector:
-    statefulset.kubernetes.io/pod-name: web-2
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-2
 
 ---
 
@@ -68,7 +68,7 @@ spec:
       port: 8088
       targetPort: 8088
   selector:
-    statefulset.kubernetes.io/pod-name: web-1
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-1
 
 ---
 
@@ -85,7 +85,7 @@ spec:
       port: 8088
       targetPort: 8088
   selector:
-    statefulset.kubernetes.io/pod-name: web-2
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-2
 
 ---
 
@@ -102,7 +102,7 @@ spec:
       port: 19888
       targetPort: 19888
   selector:
-    statefulset.kubernetes.io/pod-name: web-0
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-0
 
 ---
 
@@ -119,4 +119,4 @@ spec:
       port: 11000
       targetPort: 11000
   selector:
-    statefulset.kubernetes.io/pod-name: web-0
+    statefulset.kubernetes.io/pod-name: {{ .Chart.Name }}-ss-0

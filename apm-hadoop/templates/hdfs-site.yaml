@@ -5,6 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   hdfs-site-config: |-
+    {{- $app_namespace_bak := .Values.global.app_namespace_bak }}
+    {{- $chartName := .Chart.Name }}
+    {{- $namespace := .Release.Namespace }}
     <?xml version="1.0" encoding="UTF-8"?>
     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
     <!--
@@ -37,23 +40,23 @@ data:
 
       <property>
               <name>dfs.namenode.rpc-address.ns.nn1</name>
-              <value>web-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:9000</value>
+              <value>{{ $chartName }}-ss-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:9000</value>
       </property>
       
         <property>
               <name>dfs.namenode.http-address.ns.nn1</name>
-              <value>web-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:50070</value>
+              <value>{{ $chartName }}-ss-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:50070</value>
         </property>
 
       
         <property>
               <name>dfs.namenode.rpc-address.ns.nn2</name>
-              <value>web-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:9000</value>
+              <value>{{ $chartName }}-ss-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:9000</value>
         </property>
             
         <property>
               <name>dfs.namenode.http-address.ns.nn2</name>
-              <value>web-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:50070</value>
+              <value>{{ $chartName }}-ss-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:50070</value>
         </property>
 
 
@@ -65,11 +68,11 @@ data:
                 {{- $namespace := .Release.Namespace }}
                 {{ range $key, $val := .Values.volumenum }}
                   {{- if eq $key 0}}
-                  {{- "<value>qjournal://" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:8485;
+                  {{- "<value>qjournal://" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:8485;
                   {{- else if and (gt $key 0) (lt $key $lastnodeindex) }}
-                  {{- "" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:8485;
+                  {{- "" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:8485;
                   {{- else }}
-                  {{- "" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:8485/ns</value>
+                  {{- "" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:8485/ns</value>
                   {{- end }}
                 {{- end }}
 

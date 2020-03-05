@@ -5,6 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   yarn-site-config: |-
+    {{- $app_namespace_bak := .Values.global.app_namespace_bak }}
+    {{- $chartName := .Chart.Name }}
+    {{- $namespace := .Release.Namespace }}
     <?xml version="1.0"?>
     <!--
       Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,22 +59,22 @@ data:
 
         <property>
             <name>yarn.resourcemanager.hostname.rm1</name>
-            <value>web-1.ha-svc.{{ .Release.Namespace }}.svc.cluster.local</value>
+            <value>{{ $chartName }}-ss-1.ha-svc.{{ .Release.Namespace }}.svc.cluster.local</value>
         </property>
 
         <property>
             <name>yarn.resourcemanager.hostname.rm2</name>
-            <value>web-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local</value>
+            <value>{{ $chartName }}-ss-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local</value>
       </property>
 
         <property>
             <name>yarn.resourcemanager.webapp.address.rm1</name>
-            <value>web-1.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8088</value>
+            <value>{{ $chartName }}-ss-1.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8088</value>
         </property>
 
         <property>
             <name>yarn.resourcemanager.webapp.address.rm2</name>
-            <value>web-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8088</value>
+            <value>{{ $chartName }}-ss-2.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:8088</value>
         </property>
 
           <property>
@@ -80,11 +83,11 @@ data:
             {{- $lastnodeindex := .Values.lastnodeindex|int}}
             {{ range $key, $val := .Values.volumenum }}
               {{- if eq $key 0}}
-              {{- "<value>" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2181,
+              {{- "<value>" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2181,
               {{- else if and (gt $key 0) (lt $key $lastnodeindex) }}
-              {{- "" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2181,
+              {{- "" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2181,
               {{- else }}
-              {{- "" }}web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2181</value>
+              {{- "" }}{{ $chartName }}-ss-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local:2181</value>
               {{- end }}
             {{- end }}
         </property>
@@ -114,7 +117,7 @@ data:
 
       <property>
               <name>yarn.log.server.url</name>
-              <value>http://web-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:19888/jobhistory/logs/</value>
+              <value>http://{{ $chartName }}-ss-0.ha-svc.{{ .Release.Namespace }}.svc.cluster.local:19888/jobhistory/logs/</value>
         </property>
 
         <property>
