@@ -17,5 +17,8 @@ dependencies:
 - name: apm-unoconv
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-digest: sha256:0d79dbd3648382dd5b8ac07660ee9d2e00e0fc5f4b7f5981792f2f135ee0d8b5
-generated: "2020-03-04T20:59:17.166399+08:00"
+- name: apm-hadoop
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+digest: sha256:beb91cfb50e9da895f0918f07e35b9e1bace4a8cd019d06d257e78e1d60c4c39
+generated: "2020-03-05T21:51:09.700232+08:00"
