@@ -5,7 +5,7 @@
 global:
   app_namespace_bak:
 
-databaseimage: registry.elensdata.com/elensai/zhidatabase
+databaseimage: registry.elensdata.com/apm/zhidatabase
 
 
 apm_StorageServer: 192.168.1.163
