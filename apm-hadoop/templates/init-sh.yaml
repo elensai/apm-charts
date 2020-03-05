@@ -37,12 +37,6 @@ data:
     ssh root@$host_dns_{{ .num }} "source /etc/profile && zkServer.sh start"
     {{- end }}
 
-
-
-    tail -f /etc/host
-
-
-
     ssh root@$host_dns_0 "source /etc/profile && hadoop-daemons.sh start journalnode"      
     
 

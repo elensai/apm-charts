@@ -180,7 +180,7 @@ data:
 
         <property>
             <name>oozie.service.JPAService.jdbc.password</name>
-            <value>123456</value>
+            <value>pw123456</value>
             <description>
                 DB user password.
 

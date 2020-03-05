@@ -38,6 +38,6 @@ data:
       </property>
       <property>
         <name>javax.jdo.option.ConnectionPassword</name>
-        <value>123456</value>
+        <value>pw123456</value>
       </property>
     </configuration>
