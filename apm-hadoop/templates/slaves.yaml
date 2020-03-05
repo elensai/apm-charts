@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: slaves
+  namespace: {{ .Release.Namespace }}
+data:
+  slaves-config: |-
+    {{- $namespace := .Release.Namespace }} 
+    {{- range .Values.volumenum}}
+    web-{{ .num }}.ha-svc.{{ $namespace }}.svc.cluster.local
+    {{- end }}
