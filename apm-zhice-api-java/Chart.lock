@@ -1,0 +1,9 @@
+dependencies:
+- name: apm-hadoop
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- name: apm-mysql
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+digest: sha256:07ba6990162a890a7614ae58bfc583de36604d7d85b5be41bf3c80064ed1d028
+generated: "2020-03-07T18:44:01.364663+08:00"
