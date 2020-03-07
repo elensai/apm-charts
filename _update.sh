@@ -7,8 +7,8 @@ for i in $list
 do
   echo $i
   curl -XDELETE http://192.168.1.244:22317/api/charts/$i/0.1.0
-  helm package $i
   helm dep update $i
+  helm package $i
   curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
 done;
 
