@@ -19,3 +19,15 @@ volumenum:
 - num: "2"
 # 总结点数，最后一个节点索引，如：4个节点，最后一个索引是3
 lastnodeindex: 2
+
+# 域名服务
+apm_OOZIE_CLIENT: 
+
+apm_NAME_NODE:
+
+apm_YARN:
+
+apm_YARN_LOGS:
+
+apm_JOB:
+
