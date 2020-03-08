@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-imageWebFlowChart: registry.elensdata.com/zhice-apm/web-flow:v1.4
+imageWebFlowChart: registry.elensdata.com/zhice-apm/web-flow
 
 apm_ENV_OUTPUT_FLOW_LIST: '{
           name: "流向分析记录列表",
