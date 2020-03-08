@@ -2,7 +2,7 @@
 
 echo $1
 
-if [ -z $1 ];then
+if [ -z "$1" ];then
   commit='fix: no commit'
 fi
 
