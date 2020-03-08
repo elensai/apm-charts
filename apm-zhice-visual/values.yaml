@@ -1,0 +1,18 @@
+# Default values for apm-zhice-visual.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imageWebVisual: registry.elensdata.com/zhice-apm/web-visual
+
+apm_ENV_ACTION_ADDVISUALDATA: '{
+      name: "导入关联分析",
+      alias: "import-visual",
+      type: "page",
+      paramsdata: {
+        case_id: "908651985", // 案件ID
+        sDid: "B338F6FE-8F93-4037-A99A-D36EE67CA1E6" // 数据ID
+      },
+      url: "http://192.168.1.244:18774/analyzableData",
+      desc: "跳转到导入到关联分析页面，弹出模板匹配的弹窗"
+    }'
+
