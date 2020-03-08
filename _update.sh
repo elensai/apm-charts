@@ -1,9 +1,10 @@
 #! /bin/bash
 
 echo $1
-
+commit=$1
 if [ -z "$1" ];then
   commit='fix: no commit'
+  echo "default commit"
 fi
 
 
