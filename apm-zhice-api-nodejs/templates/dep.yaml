@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: {{ .Chart.Name }}-dep
+  labels:
+    app: {{ .Chart.Name }}-dep
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: {{ .Chart.Name }}-pod 
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-pod
+    spec:
+      containers:
+        - name: con
+          image: {{.Values.imageApp}}:{{.Chart.AppVersion}}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: app-port
+              containerPort: 8370
+              protocol: TCP   
+          volumeMounts:
+            - mountPath:  /data/APM-api-dataSource/env-dev.sh
+              name: env-config
+              subPath:  env-dev.sh
+      volumes:
+        - name: env-config
+          configMap:  
+            name: {{ .Chart.Name }}-app-env-config
+            items:
+              - key: env-config
+                path: env-dev.sh

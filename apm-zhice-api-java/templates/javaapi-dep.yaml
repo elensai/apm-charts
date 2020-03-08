@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: con
-        image: {{ .Values.javaapiimage }}
+        image: {{ .Values.javaapiimage }}:{{ .Chart.AppVersion }}
         imagePullPolicy: IfNotPresent
         # command: ["/bin/bash", "-c", "tail -f /etc/hosts"]
         volumeMounts:
