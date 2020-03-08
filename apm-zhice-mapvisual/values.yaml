@@ -1,0 +1,41 @@
+# Default values for apm-zhice-mapvisual.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imageWebMapVisual: registry.elensdata.com/zhice-apm/web-mapvisual
+
+apm_ENV_OUTPUT_MAP_LIST: '{
+      name: "时空分析记录列表",
+      alias: "data-list",
+      getMethods: {
+        type: "API",
+        url: "/graphic",
+        parameter: { // 调用URL时需要带的参数
+          case_id: "238454784",
+          page_size: {
+            type: Number,
+            default: 1000
+          },
+          type: "2",
+        }
+      },
+      getContents: { // 获取内容
+        category: "流向分析/数据列表", //内容分类，格式为： 应用名称/数据分类
+        fields: { // 接口返回的内容字段
+        }
+      }
+    }'
+
+  apm_ENV_ACTION_IMPORT: {
+      name: "导入时空分析数据",
+      alias: "import",
+      type: "page", //  目前只有两种:window（小窗口）/page(跳转)
+      metadata: { // 调用此动作的参数，例如小窗口的宽，高、跳转所带的参数
+        height: 800,
+        width: 800,
+        left: 200,
+        top: 100
+      },
+      url: "http://192.168.1.244:18777/visual",
+      desc: "其他应用触发【导入时空数据】动作时，弹出【导入时空数据】window（小窗口），在小窗口中完成数据导入，触发父级页面刷新" // 动作说明
+    }
