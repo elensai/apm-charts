@@ -4,44 +4,44 @@
 
 imageWebImportMange: registry.elensdata.com/zhice-apm/web-import
 
-apm_ENV_OUTPUT_DATA_LIST: {
+apm_ENV_OUTPUT_DATA_LIST: '{
       name: "数据文件列表",
       alias: "data-list",
       getMethods: {
-        type: 'API',
-        url: '/dataset',
+        type: "API",
+        url: "/dataset",
       },
       getContents: { // 获取内容
-        category: '数据源/数据文件', //内容分类，格式为： 应用名称/数据分类
+        category: "数据源/数据文件", //内容分类，格式为： 应用名称/数据分类
         fields: { // 接口返回的内容字段
         }
       }
-    }
+    }'
 
-apm_ENV_OUTPUT_DATA_DETAIL: {
+apm_ENV_OUTPUT_DATA_DETAIL: '{
       name: "数据文件详情",
       alias: "data-detail",
       getMethods: { // 获取方法
-        type: 'API',
-        url: '/dataset/preview',
+        type: "API",
+        url: "/dataset/preview",
         parameter: { // 调用URL时需要带的参数
-          id: '3DA23E9F-F386-4A0D-87B1-25FFCD06A80D',
-          case_id: '442791611'
+          id: "3DA23E9F-F386-4A0D-87B1-25FFCD06A80D",
+          case_id: "442791611"
         }
       },
       getContents: { // 获取内容
-        category: '数据源/数据文件详情', //内容分类，格式为： 应用名称/数据分类
+        category: "数据源/数据文件详情", //内容分类，格式为： 应用名称/数据分类
         fields: { // 接口返回的内容字段
         }
       }
-    }
+    }'
 
-apm_ENV_OUTPUT_TEMPLATE_LIST: { // 别名
+apm_ENV_OUTPUT_TEMPLATE_LIST: '{ // 别名
       name: "模板文件列表",
       alias: "data-list", // 别名
       getMethods: { // 获取方法
-        type: 'API',
-        url: '/template',
+        type: "API",
+        url: "/template",
         parameter: { // 调用URL时需要带的参数
           page_size: {
             type: Number,
@@ -50,18 +50,18 @@ apm_ENV_OUTPUT_TEMPLATE_LIST: { // 别名
         }
       },
       getContents: { // 获取内容
-        category: '模板管理/模板列表', //内容分类，格式为： 应用名称/数据分类
+        category: "模板管理/模板列表", //内容分类，格式为： 应用名称/数据分类
         fields: { // 接口返回的内容字段
         }
       }
-    }
+    }'
 
-apm_ENV_OUTPUT_TEMPLATE_DETAIL: { // 别名
+apm_ENV_OUTPUT_TEMPLATE_DETAIL: '{ // 别名
       name: "模板文件详情",
       alias: "data-detail", // 别名
       getMethods: { // 获取方法
-        type: 'API',
-        url: '/template',
+        type: "API",
+        url: "/template",
         parameter: { // 调用URL时需要带的参数
           page_size: {
             type: Number,
@@ -70,18 +70,18 @@ apm_ENV_OUTPUT_TEMPLATE_DETAIL: { // 别名
         }
       },
       getContents: { // 获取内容
-        category: '模板管理/模板详情', //内容分类，格式为： 应用名称/数据分类
+        category: "模板管理/模板详情", //内容分类，格式为： 应用名称/数据分类
         fields: { // 接口返回的内容字段
         }
       }
-    }
+    }'
 
-apm_ENV_OUTPUT_MODEL_LIST: {
-      name: '模型文件列表',
-      alias: 'model-list',
+apm_ENV_OUTPUT_MODEL_LIST: '{
+      name: "模型文件列表",
+      alias: "model-list",
       getMethods: {
-        type: 'API',
-        url: '/pattern',
+        type: "API",
+        url: "/pattern",
         parameter: {
           page_size: {
             type: Number,
@@ -89,43 +89,43 @@ apm_ENV_OUTPUT_MODEL_LIST: {
           }
         },
         getContents: { // 获取内容
-          category: '模板管理/模型详情', //内容分类，格式为： 应用名称/数据分类
+          category: "模板管理/模型详情", //内容分类，格式为： 应用名称/数据分类
           fields: { // 接口返回的内容字段
           }
         }
       }
-    }
+    }'
 
-apm_ENV_ACTION_VISUAL: {
-      name: '关联分析',
+apm_ENV_ACTION_VISUAL: '{
+      name: "关联分析",
       alias: "visual",
-      type: 'page',
+      type: "page",
       paramsdata: {
-        case_id: '908651985', // 案件ID
+        case_id: "908651985", // 案件ID
       },
-      url: 'http://192.168.1.244:18777/visual',
-      desc: '跳转关联分析页面'
-    }
+      url: "http://192.168.1.244:18777/visual",
+      desc: "跳转关联分析页面"
+    }'
 
-apm_ENV_ACTION_FLOW: {
-      name: '流向分析',
+apm_ENV_ACTION_FLOW: '{
+      name: "流向分析",
       alias: "flowchart",
-      type: 'page',
+      type: "page",
       paramsdata: {
-        case_id: '908651985', // 案件ID
+        case_id: "908651985", // 案件ID
       },
-      url: 'http://192.168.1.244:18773/flowchart',
-      desc: '跳转流向分析页面'
-    }
+      url: "http://192.168.1.244:18773/flowchart",
+      desc: "跳转流向分析页面"
+    }'
 
-apm_ENV_ACTION_CLEAN: {
-      name: '返回清洗',
+apm_ENV_ACTION_CLEAN: '{
+      name: "返回清洗",
       alias: "clean",
-      type: 'page',
+      type: "page",
       paramsdata: {
-        case_id: '908651985', // 案件ID
-        sDid: 'B338F6FE-8F93-4037-A99A-D36EE67CA1E6' // 数据ID
+        case_id: "908651985", // 案件ID
+        sDid: "B338F6FE-8F93-4037-A99A-D36EE67CA1E6" // 数据ID
       },
-      url: 'http://192.168.1.244:18770/dataetl',
-      desc: '跳转到数据清洗页面，弹出表头选定的弹窗'
-    }
+      url: "http://192.168.1.244:18770/dataetl",
+      desc: "跳转到数据清洗页面，弹出表头选定的弹窗"
+    }'
