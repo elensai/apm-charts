@@ -1,5 +1,12 @@
 #! /bin/bash
 
+echo $1
+
+if [ -z $1 ];then
+  commit='fix: no commit'
+fi
+
+
 list=`find . -name 'apm-*' -type d ! -empty | awk -F/ '{print $2}'`
 # echo "$list"
 
@@ -14,7 +21,7 @@ done;
 
 helm dep update app-zhi
 
-git add . ; git commit -m 'update'; git push origin master
+git add . ; git commit -m "$commit"; git push origin master
 
 # ------
 
