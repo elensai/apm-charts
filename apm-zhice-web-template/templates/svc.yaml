@@ -11,4 +11,4 @@ spec:
       targetPort: template-port
       protocol: TCP
   selector:
-    app: {{ .Chart.Name }}-pod      
+    app: {{ .Chart.Name }}-pod
