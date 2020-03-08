@@ -4,13 +4,9 @@ metadata:
   name: {{ .Chart.Name }}-env-config
   namespace: {{ .Release.Namespace }}
 data:
-  test: >-
-    fdsf
-    ffff
-    bbb
   env-config: |-
-    var ENV_ACTION_CLEAN = {{ .Values.apm_ENV_ACTION_CLEAN | quote }}
-    var apm_ENV_ACTION_SKIP_CLEAN = {{ .Values.apm_ENV_ACTION_SKIP_CLEAN | quote}}
+    var ENV_ACTION_CLEAN = {{ .Values.apm_ENV_ACTION_CLEAN }}
+    var apm_ENV_ACTION_SKIP_CLEAN = {{ .Values.apm_ENV_ACTION_SKIP_CLEAN }}
 
     var API_URL = {
       BASIC: {
