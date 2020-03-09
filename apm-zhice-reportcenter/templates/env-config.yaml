@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Chart.Name }}-env-config
+  namespace: {{ .Release.Namespace }}
+data:
+  env-config: |-   
+    var ENV_RECEIVE_ANALYSIS_LIST = {{ .Values.apm_ENV_RECEIVE_ANALYSIS_LIST }};
+
+    var ENV_OUTPUT_REPORT_LIST = {{ .Values.apm_ENV_OUTPUT_REPORT_LIST }};
+
+    var ENV_OUTPUT_REPORT_DETAIL = {{ .Values.apm_ENV_OUTPUT_REPORT_DETAIL }};
+
+    //生成报告的动作： 显示导入生成报告的弹框即可，require_dom: _data_create_report
+
+    var API_URL = {
+      BASE_URL: '/api',
+      HOST:'',
+      PORT: '',
+    }
+
+
+    // 写死的case_id
+    CASE_ID = 238454784;
+
+
+    
