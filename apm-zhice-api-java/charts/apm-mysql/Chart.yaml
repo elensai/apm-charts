@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 5.7.28
+description: mysql 数据库
+name: apm-mysql
+type: application
+version: 0.1.0
