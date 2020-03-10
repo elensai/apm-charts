@@ -1,23 +1,5 @@
 dependencies:
-- name: apm-elasticsearch
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
 - name: apm-mysql
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-- name: apm-neo4j
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-- name: apm-redis
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-- name: apm-logstash
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-- name: apm-unoconv
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-- name: apm-hadoop
   repository: http://192.168.1.244:22317/
   version: 0.1.0
 - name: apm-zhice-api-java
@@ -26,5 +8,5 @@ dependencies:
 - name: apm-zhice-api-nodejs
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-digest: sha256:aa0579c7ff0c346c617049e4d314d082e0e0beb9bb528c69a6a2e67e595886e2
-generated: "2020-03-10T14:03:07.988751+08:00"
+digest: sha256:f430d20a73c3ed48cace26c0354d8f087351219f7223de2b0d68c7ac21fea489
+generated: "2020-03-10T14:23:09.307322+08:00"
