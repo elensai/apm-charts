@@ -1,0 +1,9 @@
+questions:
+- variable: replicaCount
+  description: "mysql实例数量"
+  type: string
+  default: 1
+- variable: global.app_namespace_bak
+  description: "备用命名空间"
+  type: string
+  default: 
