@@ -2,5 +2,8 @@ dependencies:
 - name: apm-redis
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-digest: sha256:28e592cc3d0c35fc396ed7c7161f1976ea9aeaec05427cd5925b8d2d4081152f
-generated: "2020-03-10T22:51:09.06907+08:00"
+- name: apm-mysql
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+digest: sha256:da566acaef3591f46a7dbe401af0d25146366e114d889b35ca7b633852ea034e
+generated: "2020-03-10T23:13:37.632885+08:00"
