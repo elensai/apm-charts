@@ -4,3 +4,6 @@ apm-zhice-api-java:
       apm-mysql:
         apm_test: app-java-hadoop-mysql-test
         apm_tt: app-java-hadoop-mysql-tt
+
+apm-mysql:
+  apm_test: 2222
