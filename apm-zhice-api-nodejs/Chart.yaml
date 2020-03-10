@@ -21,23 +21,23 @@ version: 0.1.0
 appVersion: 1.0.1
 
 dependencies:
-  - name: apm-redis
-    alias: apm-redis
-    version: 0.1.0
-    repo: http://192.168.1.244:22317
-  - name: apm-mysql
-    alias: apm-mysql
-    version: 0.1.0
-    repo: http://192.168.1.244:22317
-  - name: apm-neo4j
-    alias: apm-neo4j
-    version: 0.1.0
-    repo: http://192.168.1.244:22317
-  - name: apm-elasticsearch
-    alias: apm-elasticsearch
-    version: 0.1.0
-    repo: http://192.168.1.244:22317
-  - name: apm-logstash
-    alias: apm-logstash
-    version: 0.1.0
-    repo: http://192.168.1.244:22317
+- name: apm-redis
+  alias: apm-redis
+  version: 0.1.0
+  repository: http://192.168.1.244:22317/
+- name: apm-mysql
+  alias: apm-mysql
+  version: 0.1.0
+  repository: http://192.168.1.244:22317/
+- name: apm-neo4j
+  alias: apm-neo4j
+  version: 0.1.0
+  repository: http://192.168.1.244:22317/
+- name: apm-elasticsearch
+  alias: apm-elasticsearch
+  version: 0.1.0
+  repository: http://192.168.1.244:22317/
+- name: apm-logstash
+  alias: apm-logstash
+  version: 0.1.0
+  repository: http://192.168.1.244:22317/

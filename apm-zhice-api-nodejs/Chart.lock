@@ -1,0 +1,18 @@
+dependencies:
+- name: apm-redis
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- name: apm-mysql
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- name: apm-neo4j
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- name: apm-elasticsearch
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- name: apm-logstash
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+digest: sha256:4752b08cf5717f52025bc135899a1678a9add17a818b5fd5c35dfb35a8d36314
+generated: "2020-03-10T10:53:12.971662+08:00"
