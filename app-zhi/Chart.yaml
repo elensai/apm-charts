@@ -55,7 +55,3 @@ dependencies:
 - name: apm-zhice-api-java
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-
-- name: apm-zhice-api-nodejs
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0

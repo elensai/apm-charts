@@ -18,14 +18,14 @@ do
   echo "\n"
 done < list.md
 
-while read i 
-do
-  echo "$i";
-  helm dep update $i
-  helm package $i
-  curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
-  echo "\n"
-done < list.md
+# while read i 
+# do
+#   echo "$i";
+#   helm dep update $i
+#   helm package $i
+#   curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
+#   echo "\n"
+# done < list.md
 
 # for i in $list
 # do
@@ -41,9 +41,9 @@ done < list.md
 #   curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
 # done;
 
-helm dep update app-zhi
+# helm dep update app-zhi
 
-git add . ; git commit -m "$commit"; git push origin master
+# git add . ; git commit -m "$commit"; git push origin master
 
 # ------
 

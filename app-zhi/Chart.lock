@@ -5,8 +5,5 @@ dependencies:
 - name: apm-zhice-api-java
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-- name: apm-zhice-api-nodejs
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-digest: sha256:f430d20a73c3ed48cace26c0354d8f087351219f7223de2b0d68c7ac21fea489
-generated: "2020-03-10T14:23:09.307322+08:00"
+digest: sha256:a81ac48af57ed645b798669b9c1507c78bae3b8c8412b4b1a6dc1d1364b65cb9
+generated: "2020-03-10T17:44:34.792653+08:00"
