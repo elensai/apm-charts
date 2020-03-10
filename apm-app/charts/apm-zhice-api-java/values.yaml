@@ -1,0 +1,70 @@
+apm-hadoop:
+  apm-mysql:
+    apm_Capacity: 1Gi
+    apm_Image:
+      imagePullSecrets: []
+      pullPolicy: IfNotPresent
+      repository: registry.elensdata.com/apm/mysql
+    apm_ReplicaCount: 1
+    apm_RootPasswd: pw123456
+    apm_Service:
+      port: 3306
+      type: NodePort
+    apm_StoragePath: /nfsdata/
+    apm_StorageServer: 192.168.1.163
+    apm_test: hadoop-mysql-test
+    apm_tt: mysql-tt123
+    global:
+      app_namespace_bak: null
+  apm-redis:
+    apm-mysql:
+      apm_Capacity: 1Gi
+      apm_Image:
+        imagePullSecrets: []
+        pullPolicy: IfNotPresent
+        repository: registry.elensdata.com/apm/mysql
+      apm_ReplicaCount: 1
+      apm_RootPasswd: pw123456
+      apm_Service:
+        port: 3306
+        type: NodePort
+      apm_StoragePath: /nfsdata/
+      apm_StorageServer: 192.168.1.163
+      apm_test: java-hadoop-mysql-test
+      apm_tt: java-hadoop-mysql-tt
+      global:
+        app_namespace_bak: null
+    global:
+      app_namespace_bak: null
+    redisimage: registry.elensdata.com/apm/redis
+    replicaCount: 1
+  apm_Capacity: 1Gi
+  apm_StoragePath: /nfsdata/
+  apm_StorageServer: 192.168.1.163
+  databaseimage: registry.elensdata.com/apm/zhidatabase
+  global:
+    app_namespace_bak: null
+  lastnodeindex: 2
+  volumeinit: "true"
+  volumenum:
+  - num: "0"
+  - num: "1"
+  - num: "2"
+apm-mysql:
+  apm_Capacity: 1Gi
+  apm_Image:
+    imagePullSecrets: []
+    pullPolicy: IfNotPresent
+    repository: registry.elensdata.com/apm/mysql
+  apm_ReplicaCount: 1
+  apm_RootPasswd: pw123456
+  apm_Service:
+    port: 3306
+    type: NodePort
+  apm_StoragePath: /nfsdata/
+  apm_StorageServer: 192.168.1.163
+  apm_test: java-mysql
+  apm_tt: mysql-tt123
+  global:
+    app_namespace_bak: null
+javaapiimage: registry.elensdata.com/zhice-apm/java
