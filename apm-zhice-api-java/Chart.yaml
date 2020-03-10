@@ -21,9 +21,11 @@ version: 0.1.0
 appVersion: 1.0.1
 
 dependencies:
-- name: apm-hadoop
+
+- name: apm-mysql
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-- name: apm-mysql
+
+- name: apm-hadoop
   repository: http://192.168.1.244:22317/
   version: 0.1.0
