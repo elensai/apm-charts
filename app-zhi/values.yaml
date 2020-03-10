@@ -7,8 +7,8 @@ global:
   app_namespace_bak: 
 
 
-apm-mysql:
-  apm_test: "app"
+# apm-mysql:
+#   apm_test: "app"
 
 
 apm-zhice-api-java:
