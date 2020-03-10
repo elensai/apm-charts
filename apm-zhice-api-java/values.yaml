@@ -12,5 +12,6 @@ apm_mysql:
 apm_hadoop:
   apm_mysql:
     apm_test: javahadoop
+    apm_tt: javahadoop2
 
 

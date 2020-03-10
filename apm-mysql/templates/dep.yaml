@@ -24,6 +24,8 @@ spec:
               value: {{ .Values.apm_RootPasswd | quote }}
             - name: "test_env"
               value: {{ .Values.apm_test | quote}}
+            - name: "test_tt"
+              value: {{ .Values.apm_tt | quote}}
           ports:
             - name: mysql-port
               containerPort: 3306
