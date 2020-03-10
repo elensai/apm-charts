@@ -42,8 +42,8 @@ done < list.md
 #   curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
 # done;
 
-rm -rf ./app-zhi/charts/*
-helm dep update app-zhi
+# rm -rf ./app-zhi/charts/*
+# helm dep update app-zhi
 
 git add . ; git commit -m "$commit"; git push origin master
 
