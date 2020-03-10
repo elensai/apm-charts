@@ -9,9 +9,9 @@ javaapiimage: registry.elensdata.com/zhice-apm/java
 apm-mysql:
   apm_test: java
 
-apm-hadoop:
-  apm-mysql:
-    apm_test: javahadoop
-    apm_tt: javahadoop2
+# apm-hadoop:
+#   apm-mysql:
+#     apm_test: javahadoop
+#     apm_tt: javahadoop2
 
 
