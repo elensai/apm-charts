@@ -1,0 +1,16 @@
+apm_Capacity: 1Gi
+apm_Image:
+  imagePullSecrets: []
+  pullPolicy: IfNotPresent
+  repository: registry.elensdata.com/apm/mysql
+apm_ReplicaCount: 1
+apm_RootPasswd: pw123456
+apm_Service:
+  port: 3306
+  type: NodePort
+apm_StoragePath: /nfsdata/
+apm_StorageServer: 192.168.1.163
+apm_test: mysql-test
+apm_tt: mysql-tt123
+global:
+  app_namespace_bak: null
