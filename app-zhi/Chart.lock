@@ -1,6 +1,9 @@
 dependencies:
+- name: apm-mysql
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
 - name: apm-zhice-api-java
   repository: http://192.168.1.244:22317/
   version: 0.1.0
-digest: sha256:bec950881bd4ca814e8de981eb18939f717dbe8b3a9f8c3af85dbe192faf3395
-generated: "2020-03-10T19:03:34.276922+08:00"
+digest: sha256:a81ac48af57ed645b798669b9c1507c78bae3b8c8412b4b1a6dc1d1364b65cb9
+generated: "2020-03-10T19:53:51.618888+08:00"
