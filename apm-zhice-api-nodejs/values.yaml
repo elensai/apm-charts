@@ -4,3 +4,6 @@
 
 
 imageApp: registry.elensdata.com/zhice-apm/nodejs
+
+apm-mysql:
+  apm_test: nodejs
