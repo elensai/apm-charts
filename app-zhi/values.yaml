@@ -7,3 +7,5 @@ global:
   app_namespace_bak: 
 
 
+apm_mysql:
+  apm_test: 'app'
