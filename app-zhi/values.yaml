@@ -13,6 +13,7 @@ global:
 
 apm-zhice-api-java:
   apm-hadoop:
-    apm-mysql:
-      apm_test: zhi-java-hadoop-mysql-test
-      apm_tt: zhi-java-hadoop-mysql-tt
+    apm-redis:
+      apm-mysql:
+        apm_test: zhi-java-hadoop-mysql-test
+        apm_tt: zhi-java-hadoop-mysql-tt
