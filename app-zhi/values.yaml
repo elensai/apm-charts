@@ -10,3 +10,8 @@ global:
 apm-mysql:
   apm_test: "app"
 
+apm-zhice-api-java:
+  apm-hadoop:
+    apm-mysql:
+      apm_test: zhi-java-hadoop
+      apm_tt: zhi-java-hadoop2
