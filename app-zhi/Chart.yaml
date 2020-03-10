@@ -21,36 +21,36 @@ version: 0.1.0
 appVersion: 1.0.0
 
 dependencies:
-- name: apm-elasticsearch
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
-  import-values:
-  - child: apm_Capacity
-    parent: myimports
+# - name: apm-elasticsearch
+#   repository: http://192.168.1.244:22317/
+#   version: 0.1.0
+#   import-values:
+#   - child: apm_Capacity
+#     parent: myimports
 
 - name: apm-mysql
   repository: http://192.168.1.244:22317/
   version: 0.1.0
 
-- name: apm-neo4j
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
+# - name: apm-neo4j
+#   repository: http://192.168.1.244:22317/
+#   version: 0.1.0
 
-- name: apm-redis
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
+# - name: apm-redis
+#   repository: http://192.168.1.244:22317/
+#   version: 0.1.0
 
-- name: apm-logstash
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
+# - name: apm-logstash
+#   repository: http://192.168.1.244:22317/
+#   version: 0.1.0
 
-- name: apm-unoconv
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
+# - name: apm-unoconv
+#   repository: http://192.168.1.244:22317/
+#   version: 0.1.0
 
-- name: apm-hadoop
-  repository: http://192.168.1.244:22317/
-  version: 0.1.0
+# - name: apm-hadoop
+#   repository: http://192.168.1.244:22317/
+#   version: 0.1.0
 
 - name: apm-zhice-api-java
   repository: http://192.168.1.244:22317/
