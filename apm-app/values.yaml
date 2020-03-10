@@ -2,5 +2,5 @@ apm-zhice-api-java:
   apm-hadoop:
     apm-redis:
       apm-mysql:
-        apm_test: java-hadoop-mysql-test
-        apm_tt: java-hadoop-mysql-tt
+        apm_test: app-java-hadoop-mysql-test
+        apm_tt: app-java-hadoop-mysql-tt
