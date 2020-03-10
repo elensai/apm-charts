@@ -8,9 +8,9 @@
 global:
   app_namespace_bak: 
 
-apm_test: mysqlself
+apm_test: mysql-test
 
-apm_tt: 123
+apm_tt: mysql-tt123
 
 apm_ReplicaCount: 1
 
