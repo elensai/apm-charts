@@ -11,8 +11,8 @@ apm-mysql:
   apm_test: "app"
 
 
-apm-zhice-api-java:
-  apm-hadoop:
-    apm-mysql:
-      apm_test: zhi-javahadoop
-      apm_tt: zhi-javahadoop2
+# apm-zhice-api-java:
+#   apm-hadoop:
+#     apm-mysql:
+#       apm_test: zhi-javahadoop
+#       apm_tt: zhi-javahadoop2
