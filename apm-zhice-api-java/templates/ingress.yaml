@@ -3,6 +3,12 @@ kind: Ingress
 metadata:
   name: {{ .Chart.Name }}-ingress
 spec:
-  backend:
-    serviceName: {{ .Chart.Name }}-svc
-    servicePort: 8080
+  rules:
+  - host: {{ .Chart.Name }}.192.168.1.244.xip.io
+    http:
+      paths:
+      - path: /lensData
+        backend:
+          serviceName: {{ .Chart.Name }}-svc
+          servicePort: 8080
+  
