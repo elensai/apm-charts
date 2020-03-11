@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}-ingress
+spec:
+  backend:
+    serviceName: {{ .Chart.Name }}-svc
+    servicePort: 8080
