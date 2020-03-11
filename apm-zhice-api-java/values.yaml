@@ -2,8 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-
-
 javaapiimage: registry.elensdata.com/zhice-apm/java
 
 apm-mysql:
@@ -14,5 +12,3 @@ apm-hadoop:
     apm-mysql:
       apm_test: java-hadoop-mysql-test
       apm_tt: java-hadoop-mysql-tt
-
-
