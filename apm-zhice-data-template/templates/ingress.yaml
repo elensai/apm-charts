@@ -7,7 +7,7 @@ spec:
   - host: {{ if .Values.app_host }}{{ .Values.app_host }}{{ else }}{{ .Chart.Name }}{{ end }}.192.168.1.244.xip.io
     http:
       paths:
-      - path: /datatemplate
+      - path: /
         backend:
           serviceName: {{ .Chart.Name }}-svc
           servicePort: 80
