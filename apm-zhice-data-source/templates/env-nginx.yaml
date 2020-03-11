@@ -43,7 +43,7 @@ data:
             #charset koi8-r;
             access_log  logs/host.access.log  main;
 
-            location / {
+            location /datasource {
                 root  /html;
                 index  index.html index.htm;
                 try_files $uri  /index.html;
