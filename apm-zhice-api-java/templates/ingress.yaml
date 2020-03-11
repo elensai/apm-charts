@@ -4,7 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-ingress
 spec:
   rules:
-  - host: {{ .Chart.Name }}.192.168.1.244.xip.io
+  - host: 192.168.1.244
     http:
       paths:
       - path: /lensData
