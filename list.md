@@ -1,5 +1,13 @@
 apm-mysql
 apm-redis
 apm-hadoop
+apm-neo4j
+apm-logstash
+apm-elasticsearch
+apm-zhice-api-nodejs
 apm-zhice-api-java
+apm-zhice-data-clean
+apm-zhice-data-source
+apm-zhice-data-import
+apm-zhice-data-template
 apm-app
