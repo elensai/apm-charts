@@ -4,6 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-dep
   labels:
     app: {{ .Chart.Name }}-dep
+spec:
   replicas: 1
   selector: 
     matchLabels:
@@ -15,7 +16,7 @@ metadata:
     spec:
       containers:
         - name: con
-          image: {{.Values.imageWebMapVisual}}:{{ .Chart.AppVersion }}
+          image: {{ .Values.imageWebMapVisual }}:{{ .Chart.AppVersion }}
           imagePullPolicy: IfNotPresent
           ports:
             - name: mapvisual-port
@@ -40,4 +41,4 @@ metadata:
             name: {{ .Chart.Name }}-env-config
             items:
               - key: env-config
-                path: 'config.js'        
+                path: 'config.js'   

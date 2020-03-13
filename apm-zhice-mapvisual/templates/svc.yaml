@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}-svc
   labels: 
-    svc:  {{ .Chart.Name }}-svc
+    svc: {{ .Chart.Name }}-svc
 spec:
   type: NodePort
   ports:
@@ -11,4 +11,4 @@ spec:
       targetPort: mapvisual-port
       protocol: TCP
   selector:
-    app: {{ .Chart.Name }}-pod      
+    app: {{ .Chart.Name }}-pod
