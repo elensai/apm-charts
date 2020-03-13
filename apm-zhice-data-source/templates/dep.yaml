@@ -41,5 +41,5 @@ spec:
             name: {{ .Chart.Name }}-env-config
             items:
               - key: env-config
-                mode: 666
+                mode: 0666
                 path: 'config.js'  
