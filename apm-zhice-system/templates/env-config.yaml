@@ -10,76 +10,42 @@ data:
           category: '智策外壳tab输出列表',
           fileds:[
             {
-              alias: 'zhice-data-source',
+              alias: 'apm-zhice-data-source',
               label: '数据源',
-              url: 'http://192.168.1.244:18771/filemanagement',
+              url: 'http://apm-zhice-data-source.192.168.1.244.xip.io/filemanagement',
             },
             {
-              alias: 'zhice-data-clean',
+              alias: 'apm-zhice-data-clean',
               label: '数据清洗',
-              url: 'http://192.168.1.244:18770/dataetl',
+              url: 'http://apm-zhice-data-clean.192.168.1.244.xip.io/dataetl',
             }, 
             {
-              alias: 'zhice-visual',
+              alias: 'apm-zhice-visual',
               label: '关联分析',
-              url: 'http://192.168.1.244:18777/visual',
+              url: 'http://apm-zhice-visual.192.168.1.244.xip.io/visual',
             }, 
             {
-              alias: 'zhice-mapvisual',
+              alias: 'apm-zhice-mapvisual',
               label: '时空分析',
-              url: 'http://192.168.1.244:18775/mapvisual',
+              url: 'http://apm-zhice-mapvisual.192.168.1.244.xip.io/mapvisual',
             }, 
-              {
-                alias: 'apm-zhice-reportcenter',
-                label: '报告中心',
-                url: 'http://192.168.1.244:18776/snapshotSelection',
-                // url: 'http://localhost:53855/snapshotSelection',
-              },
-              {
-                alias: 'apm-zhice-flowchart',
-                label: '流向分析',
-                // icon: './images/aside-2.png',
-                url: 'http://192.168.1.244:18773/flowchart',
-                // url: 'http://localhost:52312/flowchart',
-              },
-
             {
-              alias: 'zhice-data-import',
+              alias: 'apm-zhice-reportcenter',
+              label: '报告中心',
+              url: 'http://apm-zhice-reportcenter.192.168.1.244.xip.io/snapshotSelection',
+            },
+            {
+              alias: 'apm-zhice-flowchart',
+              label: '流向分析',
+              // icon: './images/aside-2.png',
+              url: 'http://apm-zhice-flowchart.192.168.1.244.xip.io/flowchart',
+            },
+            {
+              alias: 'apm-zhice-data-import',
               label: '可分析数据',
               // icon: './images/aside-2.png',
-              // url: 'http://localhost:55150/analyzableData',
-              url: 'http://192.168.1.244:18774/analyzableData',
-            }, 
-            // {
-            //   alias: 'shibie',
-            //   label: '智能识别',
-            //   icon: './images/aside-2.png',
-            //   url: 'http://127.0.0.1:8080/about'
-            // },
-            // {
-            //   label: '智能抽取',
-            //   alias: 'chouqu',
-            //   icon: './images/aside-3.png',
-            //   // url:'http://127.0.0.1:8080/test',
-            //   children: [
-            //     {
-            //       label: '卡片抽取',
-            //       alias:'kapian',
-            //       // url: 'http://127.0.0.1:8080/about'
-            //     },
-            //     {
-            //       label: '票据抽取',
-            //     },
-            //     {
-            //       label: '行业文档',
-            //     },
-            //   ]
-            // },
-            // {
-            //   alias: 'zhuanhuan',
-            //   label: '智能转换',
-            //   icon: './images/aside-4.png',
-            // },
+              url: 'http://apm-zhice-data-import.192.168.1.244.xip.io/analyzableData',
+            }
           ]
         }
       }
