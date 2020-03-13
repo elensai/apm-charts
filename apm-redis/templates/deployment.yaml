@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}-redis
+  name: {{ .Chart.Name }}-dep
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}-redis
+        app: {{ .Chart.Name }}-pod
     spec:
       containers:
       - name: con

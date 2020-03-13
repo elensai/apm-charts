@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}-svc
   labels:
-    dep: {{ .Chart.Name }}-svc
+    svc: {{ .Chart.Name }}-svc
 spec:
   type: NodePort
   ports:
@@ -14,4 +14,4 @@ spec:
       targetPort: p7687
       port: 7687
   selector:
-    app: {{ .Chart.Name }}-neo4j
+    app: {{ .Chart.Name }}-pod

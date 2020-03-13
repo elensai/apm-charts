@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}-svc
   labels:
-    dep: {{ .Chart.Name }}-svc
+    svc: {{ .Chart.Name }}-svc
 spec:
   type: NodePort
   ports:
     - port: 6379
       targetPort: redis-port
   selector:
-    app: {{ .Chart.Name }}-redis
+    app: {{ .Chart.Name }}-pod

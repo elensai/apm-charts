@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}-neo4j
+  name: {{ .Chart.Name }}-dep
 spec:
   replicas: {{ .Values.apm_replicaCount }}
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}-neo4j
+        app: {{ .Chart.Name }}-pod
     spec:
       containers:
       - name: con
