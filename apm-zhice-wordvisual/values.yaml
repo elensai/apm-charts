@@ -56,4 +56,9 @@ ENV_ACTION_IMPORTVISUAL: '{
       desc: "说明：携带文档内标注的所有数据跳转至【关联分析】应用的默认界面" // 动作说明
     }'
 
+direction: 'top'
+
+padding: [54, 0, 0, 0]
+
+hidebar: false
 

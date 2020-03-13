@@ -39,3 +39,9 @@ ENV_ACTION_IMPORT: '{
       url: "http://192.168.1.244:18777/visual",
       desc: "其他应用触发【导入时空数据】动作时，弹出【导入时空数据】window（小窗口），在小窗口中完成数据导入，触发父级页面刷新" // 动作说明
     }'
+
+direction: 'top'
+
+padding: [54, 0, 0, 0]
+
+hidebar: false

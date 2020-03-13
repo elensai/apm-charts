@@ -16,3 +16,8 @@ ENV_ACTION_ADDVISUALDATA: '{
       desc: "跳转到导入到关联分析页面，弹出模板匹配的弹窗"
     }'
 
+direction: 'top'
+
+padding: [54, 0, 0, 0]
+
+hidebar: false

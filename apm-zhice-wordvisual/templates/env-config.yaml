@@ -25,7 +25,13 @@ data:
         PORT: '',
       },
     }
+    var APM_CONFIG = {
+      alias: '{{ .Chart.Name }}', // 当前子模块别称
+      messageOrigin: 'apm-zhice-system.192.168.1.244.xip.io', // apm壳子部署域名
+      padding: {{ .Values.padding }} // apm壳子中iframe的偏移量 上 右 下 左 单位 px
+    }
 
+    var HIDE_BAR = {{ .Values.hidebar}};
     // 写死的case_id
     window.CASE_ID = 238454784;
 

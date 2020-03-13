@@ -60,3 +60,9 @@ ENV_OUTPUT_REPORT_DETAIL: '{
         }
       }
     }'
+    
+direction: 'top'
+
+padding: [54, 0, 0, 0]
+
+hidebar: false

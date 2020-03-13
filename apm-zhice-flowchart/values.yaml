@@ -42,3 +42,9 @@ ENV_ACTION_IMPORT: '{
 
 ENV_ACTION_FLOW: ''
 
+direction: 'top'
+
+padding: [54, 0, 0, 0]
+
+hidebar: false
+

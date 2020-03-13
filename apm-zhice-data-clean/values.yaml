@@ -15,3 +15,9 @@ ENV_OUTPUT_TEMPLATE_DETAIL: '{"name":"模板文件详情","alias":"data-detail",
 ENV_ACTION_ADD: '{"name":"新增数据","alias":"add","type":"window","metadata":{"height":800,"width":800,"left":200,"top":100},"url":"http://192.168.1.244:18771/filemanagement?openfile=true","desc":"其他应用触发【新增数据】动作时，弹出【新增数据】window（小窗口），在小窗口中完成新增数据，触发父级页面刷新"}'
 
 ENV_ACTION_DATAETLRESULT: '{"name":"查看清洗结果","alias":"add","type":"page","metadata":{},"url":"http://192.168.1.244:18774","desc":"跳转至清洗结果"}'
+
+direction: 'top'
+
+padding: [54, 0, 0, 0]
+
+hidebar: false
