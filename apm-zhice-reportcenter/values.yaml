@@ -4,62 +4,11 @@
 
 imageWebReport: registry.elensdata.com/zhice-apm/web-report
 
-ENV_RECEIVE_ANALYSIS_LIST: '{
-      name: "关联分析、流向分析、时空分析记录列表",
-      alias: "data-list",
-      getMethods: {
-        type: "API",
-        url: "/graphic",
-        parameter: { // 调用URL时需要带的参数
-          case_id: "817845123",
-          page_size: {
-            type: Number,
-            default: 1000
-          },
-          type: "all",
-        }
-      },
-      getContents: { // 获取内容
-        category: "关联分析、流向分析、时空分析/数据列表", //内容分类，格式为： 应用名称/数据分类
-        fields: { // 接口返回的内容字段
-        }
-      }
-    }'
+ENV_RECEIVE_ANALYSIS_LIST: ''
 
-ENV_OUTPUT_REPORT_LIST: '{
-      name: "报告列表",
-      alias: "data-list",
-      getMethods: {
-        type: "API",
-        url: "/analysis_report",
-        parameter: { // 调用URL时需要带的参数
-          case_id: "238454784",
-          page_size: {
-            type: Number,
-            default: 12
-          }
-        }
-      },
-      getContents: { // 获取内容
-        category: "报告中心/报告列表", //内容分类，格式为： 应用名称/数据分类
-        fields: { // 接口返回的内容字段
-        }
-      }
-    }'
+ENV_OUTPUT_REPORT_LIST: ''
 
-ENV_OUTPUT_REPORT_DETAIL: '{
-      name: "报告详情",
-      alias: "data-list",
-      getMethods: {
-        type: "API",
-        url: "/analysis_report",
-      },
-      getContents: { // 获取内容
-        category: "报告中心/报告详情", //内容分类，格式为： 应用名称/数据分类
-        fields: { // 接口返回的内容字段
-        }
-      }
-    }'
+ENV_OUTPUT_REPORT_DETAIL: ''
     
 direction: 'top'
 

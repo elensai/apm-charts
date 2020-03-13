@@ -5,14 +5,9 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    // 输出
-    var ENV_OUTPUT_FLOW_LIST = {{ .Values.ENV_OUTPUT_FLOW_LIST }};
+    var ENV_OUTPUT_MAP_PATTERN_DATASET = {{ .Values.ENV_OUTPUT_MAP_PATTERN_DATASET }};
 
-        // 触发器
-    var ENV_ACTION_IMPORT = {{ .Values.ENV_ACTION_IMPORT}}
-    
-    var ENV_ACTION_FLOW = {{ .Values.ENV_ACTION_FLOW }}
-    // 流向分析的动作：进入流向分析页面即可，require_dom： __data_flow_chart
+    var ENV_ACTION_ADDFLOWCHARTDATA = {{ .Values.ENV_OUTPUT_FLOW_LIST }};
 
     var API_URL = {
       BASIC: {

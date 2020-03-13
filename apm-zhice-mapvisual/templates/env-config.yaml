@@ -5,11 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_OUTPUT_MAP_LIST = {{ .Values.ENV_OUTPUT_MAP_LIST }};
-
-    var ENV_ACTION_IMPORT = {{ .Values.ENV_ACTION_IMPORT }};
-
-    // 流向分析的动作：进入流向分析页面即可，require_dom： __data_map_chart
+    var ENV_ACTION_ADDMAPVISUALDATA = {{ .Values.ENV_ACTION_ADDMAPVISUALDATA }};
 
     var API_URL = {
       BASIC: {

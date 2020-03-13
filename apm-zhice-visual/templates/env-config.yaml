@@ -6,6 +6,8 @@ metadata:
 data:
   env-config: |-
     var ENV_ACTION_ADDVISUALDATA = {{ .Values.ENV_ACTION_ADDVISUALDATA }}
+    var ENV_ACTION_MAP = {{ .Values.ENV_ACTION_MAP }}
+
     var API_URL = {
       BASIC: {
         BASE_URL: '/api',

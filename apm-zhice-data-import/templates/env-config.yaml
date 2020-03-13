@@ -19,6 +19,8 @@ data:
 
     var ENV_ACTION_FLOW = {{ .Values.ENV_ACTION_FLOW }}
 
+    var ENV_ACTION_MAP = {{ .Values.ENV_ACTION_MAP }}
+
     var ENV_ACTION_CLEAN = {{ .Values.ENV_ACTION_CLEAN }}
 
     var API_URL = {
