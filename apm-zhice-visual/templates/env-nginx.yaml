@@ -51,13 +51,13 @@ data:
             #error_page  404              /404.html;
             location /api{
               proxy_set_header Host $host;
-               proxy_set_header X-Forwarded-Proto $scheme;
-               proxy_set_header X-Forwarded-Port $server_port;
-               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-               proxy_http_version 1.1;
-               proxy_read_timeout 900s;
-               proxy_buffering off;
-              proxy_pass http://zhice-app-svc:8370;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header X-Forwarded-Port $server_port;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_http_version 1.1;
+              proxy_read_timeout 900s;
+              proxy_buffering off;
+              proxy_pass http://apm-zhice-api-nodejs-svc:8370;
             }
             location /lensData{
               proxy_set_header Host $host;
@@ -67,7 +67,7 @@ data:
                proxy_http_version 1.1;
                proxy_read_timeout 900s;
                proxy_buffering off;
-              proxy_pass http://192.168.1.244:8888/;
+              proxy_pass http://apm-zhice-api-java-svc:8080/;
             }
             error_page   500 502 503 504  /50x.html;
             location = /50x.html {
