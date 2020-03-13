@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-server-config
+  namespace: {{ .Release.Namespace }}
+data:
+  server-config: |-
+    {{- $host0 := "apm-hadoop-ss-0.ha-svc." }}
+    {{- $host1 := "apm-hadoop-ss-1.ha-svc." }}
+    {{- $host2 := "apm-hadoop-ss-2.ha-svc." }}
+    {{- $namespace := .Release.Namespace }}
+    {{- $hostend := ".svc.cluster.local"}}
+    <?xml version="1.0"?>
+    <config>
+      <!--本地所需配置-->
+      <!--http://web-0.ha-svc.elens-zhitu.svc.cluster.local:11000/oozie-->
+      <OOZIE_CLIENT>http://{{$host0}}{{ $namespace }}{{$hostend}}:11000/oozie</OOZIE_CLIENT>
+      <NAME_NODE>hdfs:/{{$host0}}{{ $namespace }}{{$hostend}}:9000,hdfs://{{$host2}}{{ $namespace }}{{$hostend}}:9000</NAME_NODE>
+      <HA_NAME_NODE>hdfs://{{$host0}}{{ $namespace }}{{$hostend}}:9000,hdfs://{{$host2}}{{ $namespace }}{{$hostend}}:9000</HA_NAME_NODE>
+      <YARN_ADDRESS>http://{{$host1}}{{ $namespace }}{{$hostend}}:8088</YARN_ADDRESS>
+      <YARN_LOGSADDRESS>{{$host0}}{{ $namespace }}{{$hostend}}:8042,{{$host1}}{{ $namespace }}{{$hostend}}:8042,{{$host2}}{{ $namespace }}{{$hostend}}:8042</YARN_LOGSADDRESS>
+      <JOB_TRACKER>{{$host1}}{{ $namespace }}{{$hostend}}:8032</JOB_TRACKER>
+
+      <HOSTNAME_CON>true</HOSTNAME_CON>
+      <QUEUE_NAME>default</QUEUE_NAME>
+      <APP_WORKSPACE>/EML/oozie</APP_WORKSPACE>
+      <DRAFT_PATH>/EML/draft</DRAFT_PATH>
+      <DATASET_PATH>/EML/lensData</DATASET_PATH>
+      <DOWNLOAD_PATH>src/main/webapp/dowload/</DOWNLOAD_PATH>
+      <MODULE_PATH>/EML/Modules</MODULE_PATH>
+      <PROGRAMS_PATH>/EML/Programs</PROGRAMS_PATH>
+
+      <DB_HOST>apm-mysql-svc</DB_HOST>
+      <DB_PORT>3306</DB_PORT>
+      <DB_NAME>lens_dataprocess_plat</DB_NAME>
+      <DB_USER>root</DB_USER>
+      <DB_PASSWORD>pw123456</DB_PASSWORD>
+      <DB_TIMEOUT>100</DB_TIMEOUT>
+
+      <MAIL_HOST>mail.software.ict.ac.cn</MAIL_HOST>
+      <MAIL_USERNAME>bda@software.ict.ac.cn</MAIL_USERNAME>
+      <MAIL_PASSWORD>bda@ict</MAIL_PASSWORD>
+      <TENSORFLOW_CLUSTER>elens-server2, elens-server3, elens-server5</TENSORFLOW_CLUSTER>
+      <TENSORFLOW_MASTER>elens-server2</TENSORFLOW_MASTER>
+      <TENSORFLOW_USER>root</TENSORFLOW_USER>
+
+      <!--ha模式新增nameservices配置-->
+      <NAME_SERVICES>ns</NAME_SERVICES>
+      <HA_NAME_NODES>nn1,nn2</HA_NAME_NODES>
+
+    </config>

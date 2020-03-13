@@ -1,0 +1,27 @@
+apiVersion: v2
+appVersion: 1.0.1
+dependencies:
+- alias: apm-redis
+  name: apm-redis
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- alias: apm-mysql
+  name: apm-mysql
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- alias: apm-neo4j
+  name: apm-neo4j
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- alias: apm-elasticsearch
+  name: apm-elasticsearch
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+- alias: apm-logstash
+  name: apm-logstash
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+description: A Helm chart for Kubernetes
+name: apm-zhice-api-nodejs
+type: application
+version: 0.1.0

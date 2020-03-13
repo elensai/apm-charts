@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Chart.Name }}-env-config
+  namespace: {{ .Release.Namespace }}
+data:
+  env-config: |-
+    var ENV_OUTPUT_MAP_LIST = {{ .Values.ENV_OUTPUT_MAP_LIST }};
+
+    var ENV_ACTION_IMPORT = {{ .Values.ENV_ACTION_IMPORT }};
+
+    // 流向分析的动作：进入流向分析页面即可，require_dom： __data_map_chart
+
+    var API_URL = {
+      BASIC: {
+        BASE_URL: '/api',
+        HOST:'',
+        PORT: '',
+      }
+    }
+
+    // 写死的case_id
+    CASE_ID = 238454784;
+
+
+    

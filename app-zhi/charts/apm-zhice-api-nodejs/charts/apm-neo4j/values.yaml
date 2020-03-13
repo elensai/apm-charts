@@ -1,0 +1,17 @@
+# Default values for apm-neo4j.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+apm_replicaCount: 1
+
+apm_neo4jdata: 1Gi
+
+apm_StoragePath: /nfsdata/
+
+apm_StorageServer: 192.168.1.163
+
+apm_neo4jimage: registry.elensdata.com/apm/neo4j
+
+
+

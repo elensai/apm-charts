@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-dep
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pod
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-pod
+    spec:
+      containers:
+      - name: con
+        image: {{ .Values.logstashimage }}:{{ .Chart.AppVersion }}
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/bash", "-c", "tail -f /etc/hosts"]
+        volumeMounts:
+        - mountPath: /user/apps/logstash/config/logstash.conf
+          name: logstash-c
+          subPath: logstash.conf
+
+      volumes:
+        - name: logstash-c
+          configMap:
+            name: {{ .Chart.Name }}-logstash-config
+            items:
+              - key: logstash-config
+                path: logstash.conf
+      # tolerations:
+      #   - key: "key"
+      #     operator: "Equal"
+      #     value: "test02"
+      #     effect: "PreferNoSchedule"

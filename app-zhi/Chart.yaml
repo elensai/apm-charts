@@ -1,0 +1,59 @@
+apiVersion: v2
+name: app-zhi
+type: application
+version: 0.1.0
+appVersion: 1.0.0
+dependencies:
+  - name: apm-zhice-data-source
+    alias: apm-zhice-data-source
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-data-clean
+    alias: apm-zhice-data-clean
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-data-template
+    alias: apm-zhice-data-template
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-data-import
+    alias: apm-zhice-data-import
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-visual
+    alias: apm-zhice-visual
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-flowchart
+    alias: apm-zhice-flowchart
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-mapvisual
+    alias: apm-zhice-mapvisual
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-reportcenter
+    alias: apm-zhice-reportcenter
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-wordvisual
+    alias: apm-zhice-wordvisual
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-system
+    alias: apm-zhice-system
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-hadoop
+    alias: apm-hadoop
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-api-java
+    alias: apm-zhice-api-java
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+  - name: apm-zhice-api-nodejs
+    alias: apm-zhice-api-nodejs
+    version: 0.1.0
+    repository: http://192.168.1.244:22317
+

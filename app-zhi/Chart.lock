@@ -1,0 +1,42 @@
+dependencies:
+- name: apm-zhice-data-source
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-data-clean
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-data-template
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-data-import
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-visual
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-flowchart
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-mapvisual
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-reportcenter
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-wordvisual
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-system
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-hadoop
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-api-java
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+- name: apm-zhice-api-nodejs
+  repository: http://192.168.1.244:22317
+  version: 0.1.0
+digest: sha256:7c577d1cc8cd0b17e768e5c2a8c08c5ce00a8545935ced2c8130ff5fc6dd9276
+generated: "2020-03-13T18:16:12.863728+08:00"

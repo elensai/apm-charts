@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Chart.Name }}-env-config
+  namespace: {{ .Release.Namespace }}
+data:
+  env-config: |-
+    var ENV_OUTPUT_DATA_LIST = {{ .Values.ENV_OUTPUT_DATA_LIST }};
+    
+    var ENV_OUTPUT_DATA_DETAIL = {{ .Values.ENV_OUTPUT_DATA_DETAIL }};
+
+    var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.ENV_OUTPUT_TEMPLATE_LIST }};
+
+    var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.ENV_OUTPUT_TEMPLATE_DETAIL }};
+
+    var ENV_OUTPUT_MODEL_LIST = {{ .Values.ENV_OUTPUT_MODEL_LIST }}
+
+    var ENV_ACTION_VISUAL = {{ .Values.ENV_ACTION_VISUAL }}
+
+    var ENV_ACTION_FLOW = {{ .Values.ENV_ACTION_FLOW }}
+
+    var ENV_ACTION_CLEAN = {{ .Values.ENV_ACTION_CLEAN }}
+
+    var API_URL = {
+      BASIC: {
+        URL: '/api', // 直接使用完整公共请求路径 免于后续拼接
+        // PROTOCOL: 'http',
+        // BASE_URL: '/api',
+        // HOST:'http://localhost',
+        // PORT: "3000",
+        // 真正的地址和端口
+        // BASE_URL: '/api/api',
+        // 192.168.1.78:8018
+      },
+      // ENV_DATASET_URL:'192.168.1.244:8888',
+      BIG_DATA: {
+        URL: 'http://192.168.1.244:8888',
+        // PROTOCOL: 'http',
+        // BASE_URL: '/lensData',
+        // HOST:'http://localhost',
+        // PORT: "3000",
+        // 真正的地址和端口
+        // BASE_URL: '/lensData',
+        // 192.168.1.78:8018
+        // HOST:'',
+        // PORT: '',
+      },
+    }
+    // 写死的case_id
+    window.CASE_ID = 238454784;
+
+    

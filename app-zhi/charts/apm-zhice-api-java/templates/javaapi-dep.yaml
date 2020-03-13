@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-dep
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-pod
+    spec:
+      containers:
+      - name: con
+        image: {{ .Values.javaapiimage }}:{{ .Chart.AppVersion }}
+        imagePullPolicy: IfNotPresent
+        # command: ["/bin/bash", "-c", "tail -f /etc/hosts"]
+        volumeMounts:
+        - mountPath: /user/apps/tomcat/webapps/lensData/WEB-INF/classes/application.properties
+          name: application-properties-v
+          subPath: application.properties
+        - name: server-config
+          mountPath: /user/apps/tomcat/webapps/lensData/WEB-INF/classes/server-config.xml
+          subPath: server-config.xml
+        ports:
+        - name: javaport
+          containerPort: 8080
+      volumes:
+      - name: application-properties-v
+        configMap:
+          name: {{ .Chart.Name }}-application-properties-config
+          items: 
+          - key: application-properties
+            path: application.properties
+      - name: server-config
+        configMap:
+          name: {{ .Chart.Name }}-server-config
+          items:
+          - key: server-config
+            path: server-config.xml
+
+      # tolerations:
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "test02"
+      #   effect: "PreferNoSchedule"
+          

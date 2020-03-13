@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: 1.6.0
+dependencies:
+- name: apm-mysql
+  repository: http://192.168.1.244:22317/
+  version: 0.1.0
+description: A Helm chart for Kubernetes
+name: apm-hadoop
+type: application
+version: 0.1.0

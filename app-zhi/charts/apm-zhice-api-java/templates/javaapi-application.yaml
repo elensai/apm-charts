@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-application-properties-config
+  namespace: {{ .Release.Namespace }}
+data:
+  application-properties: |-
+    #244使用
+    spring.datasource.primary.jdbc-url = jdbc:mysql://apm-mysql-svc:3306/lens_dataprocess_plat?useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true
+    spring.datasource.primary.username = root
+    spring.datasource.primary.password = pw123456
+    spring.datasource.primary.driver-class-name = com.mysql.cj.jdbc.Driver
+    spring.datasource.secondary.jdbc-url=jdbc:mysql://apm-mysql-svc:3306/studio?useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true
+    spring.datasource.secondary.username=root
+    spring.datasource.secondary.password=pw123456
+    spring.datasource.secondary.driver-class-name=com.mysql.cj.jdbc.Driver
+
+    # Specify the DBMS
+    spring.jpa.database = MYSQL
+    # Show or not log for each sql query
+    spring.jpa.show-sql = true
+
+    #上传数据spring.datasource.dbcp2.max-idle = 100
+    spring.http.multipart.max-file-size=1000Mb
+    spring.http.multipart.max-request-size=1000Mb
+
+    server.maxHttpHeaderSize=102400000
+    server.maxHttpPostSize =102400000
+    # Single file max size
+    multipart.maxFileSize=500Mb
+
+    # All files max size
+    multipart.maxRequestSize=500Mb

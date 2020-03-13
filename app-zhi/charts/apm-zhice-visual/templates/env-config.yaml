@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Chart.Name }}-env-config
+  namespace: {{ .Release.Namespace }}
+data:
+  env-config: |-
+    var ENV_ACTION_ADDVISUALDATA = {{ .Values.ENV_ACTION_ADDVISUALDATA }}
+    var API_URL = {
+      BASIC: {
+        BASE_URL: '/api',
+        HOST:'',
+        PORT: '',
+      
+      },
+      BIG_DATA: {
+        BASE_URL: '/lensData',
+        HOST:'',
+        PORT: '',
+
+      },
+    }
+
+    // 写死的case_id
+    window.CASE_ID = 238454784;
+
+
+    

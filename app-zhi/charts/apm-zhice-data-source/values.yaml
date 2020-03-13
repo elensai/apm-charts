@@ -1,0 +1,9 @@
+# Default values for apm-zhice-web-datasource.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imageWebDatasource: registry.elensdata.com/zhice-apm/web-data
+
+ENV_ACTION_CLEAN: '{"name":"清洗","alias":"clean","type":"page","paramsdata":{"case_id":"","sDid":""},"url":"http://192.168.1.244:18770/dataetl","desc":"跳转到数据清洗页面，弹出表头选定的弹窗"}'
+
+ENV_ACTION_SKIP_CLEAN: '{"name":"跳过清洗","alias":"skip-clean","type":"page","paramsdata":{"case_id":"","sDid":"","is_jump":false},"url":"http://192.168.1.244:18770/dataetl","desc":"跳转到数据清洗页面，弹出跳过清洗的弹窗"}'
