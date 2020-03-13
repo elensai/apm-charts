@@ -1,0 +1,5 @@
+# Default values for apm-zhice-system.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imageWebSystem: registry.elensdata.com/zhice-apm/web-system
