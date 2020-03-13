@@ -10,7 +10,7 @@ apm-zhice-data-import:
   ENV_OUTPUT_TEMPLATE_LIST: '{"name":"模板文件列表","alias":"data-list","getMethods":{"type":"API","url":"%APP_HOST%/api/template","parameter":{"page_size":{"default":100}}},"getContents":{"category":"数据源/数据文件","fields":{}}}'
   ENV_OUTPUT_TEMPLATE_DETAIL: '{"name":"模板文件详情","alias":"data-detail","getMethods":{"type":"API","url":"%APP_HOST%/api/template","parameter":{"temp_id":{"default":"971430007"}}},"getContents":{"category":"数据源/数据文件详情","fields":{}}}'
   ENV_ACTION_VISUAL: '{"name":"关联分析","alias":"visual","type":"page","paramsdata":{"case_id":"908651985"},"url":"http://admin.gongan.corp.elensdata.com/visual","desc":"跳转关联分析页面"}'
-  ENV_ACTION_FLOW: undefined
+  ENV_ACTION_FLOW: '{"name":"流向分析","alias":"flowchart","type":"page","paramsdata":{"case_id":"908651985"},"url":"http://admin.gongan.corp.elensdata.com/flowchart","desc":"跳转流向分析页面"}'
   ENV_ACTION_MAP: '{"name":"时空分析","alias":"map","type":"page","paramsdata":{"case_id":"908651985"},"url":"http://admin.gongan.corp.elensdata.com/mapvisual","desc":"跳转流向分析页面"}'
   ENV_ACTION_CLEAN: '{"name":"清洗","alias":"clean","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://admin.gongan.corp.elensdata.com/dataetl","desc":"跳转到数据清洗页面，弹出表头选定的弹窗"}'
 apm-zhice-flowchart:
