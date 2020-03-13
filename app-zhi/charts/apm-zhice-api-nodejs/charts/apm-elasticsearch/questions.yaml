@@ -1,5 +1,0 @@
-questions:
-- variable: global.app_namespace_bak
-  description: "备用命名空间"
-  type: string
-  default: 

@@ -1,6 +1,0 @@
-apiVersion: v2
-appVersion: 5.0.4
-description: A Helm chart for Kubernetes
-name: apm-redis
-type: application
-version: 0.1.0
