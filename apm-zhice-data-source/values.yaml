@@ -10,6 +10,6 @@ ENV_ACTION_SKIP_CLEAN: '{"name":"跳过清洗","alias":"skip-clean","type":"page
 
 direction: 'top'
 
-padding: [54, 0, 0, 0]
+padding: '[54, 0, 0, 0]'
 
 hidebar: false

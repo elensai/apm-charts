@@ -6,6 +6,6 @@ imageWebTemplate: registry.elensdata.com/zhice-apm/web-template
 
 direction: 'top'
 
-padding: [54, 0, 0, 0]
+padding: '[54, 0, 0, 0]'
 
 hidebar: false

@@ -51,7 +51,7 @@ data:
       }
       var APM_CONFIG = {
         alias: '{{ .Chart.Name }}', // 当前子模块别称
-        messageOrigin: 'apm-zhice-system.192.168.1.244.xip.io', // apm壳子部署域名
+        messageOrigin: 'http://apm-zhice-system.192.168.1.244.xip.io', // apm壳子部署域名
         tabPosition: '{{ .Values.direction }}', // 切换tab的位置 left 左边 top 上边 
-        padding: {{ .Values.padding }} // apm壳子中iframe的偏移量 上 右 下 左 单位 px 当tabPosition 为 left 时 值为 [54, 0, 0, 197] ，当tabPosition 为 top 时 值为 [54, 0, 0, 0]
+        padding: {{ .Values.padding }} // apm壳子中iframe的偏移量 上 右 下 左 单位 px 当tabPosition 为 left 时 值为 [54, 0, 0, 197] ，当tabPosition 为 top 时 值为 '[54, 0, 0, 0]'
       }
