@@ -39,4 +39,4 @@ dependencies:
   repository: http://192.168.1.244:22317
   version: 0.1.0
 digest: sha256:7c577d1cc8cd0b17e768e5c2a8c08c5ce00a8545935ced2c8130ff5fc6dd9276
-generated: "2020-03-13T18:27:09.161324+08:00"
+generated: "2020-03-13T18:28:46.576224+08:00"
