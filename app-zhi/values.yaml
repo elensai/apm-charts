@@ -14,17 +14,19 @@ apm-zhice-data-import:
   ENV_ACTION_MAP: '{"name":"时空分析","alias":"map","type":"page","paramsdata":{"case_id":"908651985"},"url":"http://admin.gongan.corp.elensdata.com/mapvisual","desc":"跳转流向分析页面"}'
   ENV_ACTION_CLEAN: '{"name":"清洗","alias":"clean","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://admin.gongan.corp.elensdata.com/dataetl","desc":"跳转到数据清洗页面，弹出表头选定的弹窗"}'
 apm-zhice-flowchart:
-  ENV_OUTPUT_MAP_PATTERN_DATASET: undefined
-  ENV_ACTION_ADDFLOWCHARTDATA: '{"name":"导入流向分析","alias":"import-flowchart","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://admin.gongan.corp.elensdata.com/fieldrelatedflow/{sDid}","desc":"跳转到导入流向页面，弹出模板匹配弹窗"}'
+  ENV_OUTPUT_MAP_PATTERN_DATASET: '{"name":"导入管理/流向分析选择数据集列表","alias":"map_pattern_dataset","getMethods":{"type":"API","url":"{{
+    APP_HOST
+    }}/api/map_pattern_dataset","parameter":{"case_id":238454784}},"getContents":{"category":"流向分析选择数据集列表/结果集列表","fields":{}}}'
+  ENV_ACTION_ADDFLOWCHARTDATA: '{"name":"导入流向分析","alias":"import-flowchart","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://192.168.1.78:8023/analyzableData","desc":"跳转到导入流向页面，弹出模板匹配弹窗"}'
 apm-zhice-reportcenter:
   ENV_OUTPUT_REPORTCENTER_LIST: '{"name":"关联分析记录列表","alias":"visual-result-list","getMethods":{"type":"API","url":"%APP_HOST%/api/graphic","parameter":{"type":1,"case_id":442791611}},"getContents":{"category":"关联分析记录列表","fields":{}}}'
 apm-zhice-data-source:
   ENV_ACTION_CLEAN: '{"name":"清洗","alias":"clean","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://admin.gongan.corp.elensdata.com/dataetl","desc":"跳转到数据清洗页面，弹出表头选定的弹窗"}'
   ENV_ACTION_SKIP_CLEAN: '{"name":"跳过清洗","alias":"skip-clean","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6","is_jump":true},"url":"http://admin.gongan.corp.elensdata.com/dataetl","desc":"跳转到数据清洗页面，弹出跳过清洗的弹窗"}'
 apm-zhice-visual:
-  ENV_ACTION_ADDVISUALDATA: '{"name":"导入关联分析","alias":"import-visual","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://admin.gongan.corp.elensdata.com/fieldrelated/{sDid}","desc":"跳转到导入到关联分析页面，弹出模板匹配的弹窗"}'
+  ENV_ACTION_ADDVISUALDATA: '{"name":"导入关联分析","alias":"import-visual","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://192.168.1.78:8023/analyzableData","desc":"跳转到导入到关联分析页面，弹出模板匹配的弹窗"}'
   ENV_ACTION_MAP: '{"name":"时空分析","alias":"map","type":"page","paramsdata":{"case_id":"908651985"},"url":"http://admin.gongan.corp.elensdata.com/mapvisual","desc":"跳转流向分析页面"}'
 apm-zhice-mapvisual:
-  ENV_ACTION_ADDMAPVISUALDATA: '{"name":"导入时空分析","alias":"import-mapvisual","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://admin.gongan.corp.elensdata.com/fieldrelated/{sDid}","desc":"跳转到导入到关联分析页面，弹出模板匹配的弹窗"}'
+  ENV_ACTION_ADDMAPVISUALDATA: '{"name":"导入时空分析","alias":"import-mapvisual","type":"page","paramsdata":{"case_id":"908651985","sDid":"B338F6FE-8F93-4037-A99A-D36EE67CA1E6"},"url":"http://192.168.1.78:8023/analyzableData","desc":"跳转到导入到关联分析页面，弹出模板匹配的弹窗"}'
 apm-zhice-wordvisual:
-  ENV_ACTION_IMPORT_VISUALDATA: undefined
+  ENV_ACTION_IMPORT_VISUALDATA: '{"name":"导入关联分析","alias":"import-visual-data","type":"page","paramsdata":{"case_id":"908651985"},"url":"http://admin.gongan.corp.elensdata.com/visual","desc":"跳转关联分析页面"}'
