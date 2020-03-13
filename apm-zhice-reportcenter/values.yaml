@@ -4,7 +4,7 @@
 
 imageWebReport: registry.elensdata.com/zhice-apm/web-report
 
-apm_ENV_RECEIVE_ANALYSIS_LIST: '{
+ENV_RECEIVE_ANALYSIS_LIST: '{
       name: "关联分析、流向分析、时空分析记录列表",
       alias: "data-list",
       getMethods: {
@@ -26,7 +26,7 @@ apm_ENV_RECEIVE_ANALYSIS_LIST: '{
       }
     }'
 
-apm_ENV_OUTPUT_REPORT_LIST: '{
+ENV_OUTPUT_REPORT_LIST: '{
       name: "报告列表",
       alias: "data-list",
       getMethods: {
@@ -47,7 +47,7 @@ apm_ENV_OUTPUT_REPORT_LIST: '{
       }
     }'
 
-apm_ENV_OUTPUT_REPORT_DETAIL: '{
+ENV_OUTPUT_REPORT_DETAIL: '{
       name: "报告详情",
       alias: "data-list",
       getMethods: {

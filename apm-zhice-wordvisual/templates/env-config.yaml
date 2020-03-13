@@ -5,11 +5,11 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_OUTPUT_DOC_LIST = {{ .Values.apm_ENV_OUTPUT_DOC_LIST }};
+    var ENV_OUTPUT_DOC_LIST = {{ .Values.ENV_OUTPUT_DOC_LIST }};
 
-    var ENV_OUTPUT_DATA_REMARK = {{ .Values.apm_ENV_OUTPUT_DATA_REMARK }};
+    var ENV_OUTPUT_DATA_REMARK = {{ .Values.ENV_OUTPUT_DATA_REMARK }};
 
-    var ENV_ACTION_IMPORTVISUAL = {{ .Values.apm_ENV_ACTION_IMPORTVISUAL }};
+    var ENV_ACTION_IMPORTVISUAL = {{ .Values.ENV_ACTION_IMPORTVISUAL }};
 
     // 动作：文档编辑   require_dom:   __data_wordvisual
 

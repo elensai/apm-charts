@@ -42,7 +42,7 @@ done < list.md
 #   curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
 # done;
 
-
+rm -f apm*tgz
 
 git add . ; git commit -m "$commit"; git push origin master
 

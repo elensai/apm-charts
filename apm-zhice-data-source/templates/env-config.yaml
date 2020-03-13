@@ -5,8 +5,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_ACTION_CLEAN = {{ .Values.apm_ENV_ACTION_CLEAN }}
-    var apm_ENV_ACTION_SKIP_CLEAN = {{ .Values.apm_ENV_ACTION_SKIP_CLEAN }}
+    var ENV_ACTION_CLEAN = {{ .Values.ENV_ACTION_CLEAN }}
+    var ENV_ACTION_SKIP_CLEAN = {{ .Values.ENV_ACTION_SKIP_CLEAN }}
 
     var API_URL = {
       BASIC: {

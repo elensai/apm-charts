@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_ACTION_ADDVISUALDATA = {{ .Values.apm_ENV_ACTION_ADDVISUALDATA }}
+    var ENV_ACTION_ADDVISUALDATA = {{ .Values.ENV_ACTION_ADDVISUALDATA }}
     var API_URL = {
       BASIC: {
         BASE_URL: '/api',

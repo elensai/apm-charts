@@ -5,12 +5,13 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-        var ENV_OUTPUT_DATA_LIST = {{ .Values.apm_ENV_OUTPUT_DATA_LIST }};
-        var ENV_OUTPUT_DATA_DETAIL = {{ .Values.apm_ENV_OUTPUT_DATA_DETAIL }};
-        var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.apm_ENV_OUTPUT_TEMPLATE_LIST }};
-        var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.apm_ENV_OUTPUT_TEMPLATE_DETAIL }};
-        var ENV_ACTION_ADD = {{ .Values.apm_ENV_ACTION_ADD }};
-        var ENV_ACTION_DATAETLRESULT = {{ .Values.apm_ENV_ACTION_DATAETLRESULT }};
+        var ENV_OUTPUT_DATA_LIST = {{ .Values.ENV_OUTPUT_DATA_LIST }};
+        var ENV_OUTPUT_DATA_DETAIL = {{ .Values.ENV_OUTPUT_DATA_DETAIL }};
+        var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.ENV_OUTPUT_TEMPLATE_LIST }};
+        var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.ENV_OUTPUT_TEMPLATE_DETAIL }};
+        var ENV_ACTION_ADD = {{ .Values.ENV_ACTION_ADD }};
+        var ENV_ACTION_DATAETLRESULT = {{ .Values.ENV_ACTION_DATAETLRESULT }};
+        
         var API_URL = {
           BASIC: {
             BASE_URL: '/api',

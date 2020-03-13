@@ -4,7 +4,7 @@
 
 imageWebVisual: registry.elensdata.com/zhice-apm/web-visual
 
-apm_ENV_ACTION_ADDVISUALDATA: '{
+ENV_ACTION_ADDVISUALDATA: '{
       name: "导入关联分析",
       alias: "import-visual",
       type: "page",

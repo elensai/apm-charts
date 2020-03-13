@@ -5,21 +5,21 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_OUTPUT_DATA_LIST = {{ .Values.apm_ENV_OUTPUT_DATA_LIST }};
+    var ENV_OUTPUT_DATA_LIST = {{ .Values.ENV_OUTPUT_DATA_LIST }};
     
-    var ENV_OUTPUT_DATA_DETAIL = {{ .Values.apm_ENV_OUTPUT_DATA_DETAIL }};
+    var ENV_OUTPUT_DATA_DETAIL = {{ .Values.ENV_OUTPUT_DATA_DETAIL }};
 
-    var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.apm_ENV_OUTPUT_TEMPLATE_LIST }};
+    var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.ENV_OUTPUT_TEMPLATE_LIST }};
 
-    var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.apm_ENV_OUTPUT_TEMPLATE_DETAIL }};
+    var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.ENV_OUTPUT_TEMPLATE_DETAIL }};
 
-    var ENV_OUTPUT_MODEL_LIST = {{ .Values.apm_ENV_OUTPUT_MODEL_LIST }}
+    var ENV_OUTPUT_MODEL_LIST = {{ .Values.ENV_OUTPUT_MODEL_LIST }}
 
-    var ENV_ACTION_VISUAL = {{ .Values.apm_ENV_ACTION_VISUAL }}
+    var ENV_ACTION_VISUAL = {{ .Values.ENV_ACTION_VISUAL }}
 
-    var ENV_ACTION_FLOW = {{ .Values.apm_ENV_ACTION_FLOW }}
+    var ENV_ACTION_FLOW = {{ .Values.ENV_ACTION_FLOW }}
 
-    var ENV_ACTION_CLEAN = {{ .Values.apm_ENV_ACTION_CLEAN }}
+    var ENV_ACTION_CLEAN = {{ .Values.ENV_ACTION_CLEAN }}
 
     var API_URL = {
       BASIC: {

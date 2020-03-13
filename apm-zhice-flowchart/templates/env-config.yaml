@@ -6,12 +6,12 @@ metadata:
 data:
   env-config: |-
     // 输出
-    var ENV_OUTPUT_FLOW_LIST = {{ .Values.apm_ENV_OUTPUT_FLOW_LIST }};
+    var ENV_OUTPUT_FLOW_LIST = {{ .Values.ENV_OUTPUT_FLOW_LIST }};
 
         // 触发器
-    var ENV_ACTION_IMPORT = {{ .Values.apm_ENV_ACTION_IMPORT}}
+    var ENV_ACTION_IMPORT = {{ .Values.ENV_ACTION_IMPORT}}
     
-    var ENV_ACTION_FLOW = {{ .Values.apm_ENV_ACTION_FLOW }}
+    var ENV_ACTION_FLOW = {{ .Values.ENV_ACTION_FLOW }}
     // 流向分析的动作：进入流向分析页面即可，require_dom： __data_flow_chart
 
     var API_URL = {

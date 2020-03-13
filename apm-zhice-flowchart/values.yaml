@@ -4,7 +4,7 @@
 
 imageWebFlowChart: registry.elensdata.com/zhice-apm/web-flow
 
-apm_ENV_OUTPUT_FLOW_LIST: '{
+ENV_OUTPUT_FLOW_LIST: '{
           name: "流向分析记录列表",
           alias: "data-list",
           getMethods: {
@@ -26,7 +26,7 @@ apm_ENV_OUTPUT_FLOW_LIST: '{
           }
         }'
 
-apm_ENV_ACTION_IMPORT: '{
+ENV_ACTION_IMPORT: '{
           name: "导入流向数据",
           alias: "import",
           type: "window", //  目前只有两种:window（小窗口）/page(跳转)
@@ -40,5 +40,5 @@ apm_ENV_ACTION_IMPORT: '{
           desc: "其他应用触发【导入流向数据】动作时，弹出【导入流向数据】window（小窗口），在小窗口中完成数据导入，触发父级页面刷新" // 动作说明
         }'
 
-apm_ENV_ACTION_FLOW: ''
+ENV_ACTION_FLOW: ''
 

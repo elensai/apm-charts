@@ -4,7 +4,7 @@
 
 imageWebWordVisual: registry.elensdata.com/zhice-apm/web-wordvisual
 
-apm_ENV_OUTPUT_DOC_LIST: '{ // 别名
+ENV_OUTPUT_DOC_LIST: '{ // 别名
       name: "文档文件列表",
       alias: "data-list", // 别名
       getMethods: { // 获取方法
@@ -25,7 +25,7 @@ apm_ENV_OUTPUT_DOC_LIST: '{ // 别名
       }
     }'
 
-apm_ENV_OUTPUT_DATA_REMARK: '{ // 别名
+ENV_OUTPUT_DATA_REMARK: '{ // 别名
       name: "文档标注图谱数据",
       alias: "data-list", // 别名
       getMethods: { // 获取方法
@@ -42,7 +42,7 @@ apm_ENV_OUTPUT_DATA_REMARK: '{ // 别名
       }
     }'
 
-apm_ENV_ACTION_IMPORTVISUAL: '{
+ENV_ACTION_IMPORTVISUAL: '{
       name: "导入到关联分析",
       alias: "import_visual",
       type: "window", //  目前只有两种:window（小窗口）/page(跳转)
