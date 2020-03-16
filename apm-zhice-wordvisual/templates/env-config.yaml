@@ -25,7 +25,7 @@ data:
       padding: {{ .Values.padding }} // apm壳子中iframe的偏移量 上 右 下 左 单位 px
     }
 
-    var HIDE_BAR = {{ .Values.hidebar}};
+    var HIDE_BAR = {{ if .Values.global.hidebar }}{{ .Values.global.hidebar }}{{ else }}{{ .Values.hidebar}}{{ end }};
     // 写死的case_id
     window.CASE_ID = 238454784;
 
