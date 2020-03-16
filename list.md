@@ -17,4 +17,4 @@ apm-zhice-data-template
 apm-zhice-data-import
 apm-zhice-visual
 apm-zhice-system
-app-app
+
