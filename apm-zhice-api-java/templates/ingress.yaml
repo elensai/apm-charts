@@ -7,7 +7,7 @@ spec:
   - host: {{ if .Values.app_host }}{{ .Values.app_host }}{{ else }}{{ .Chart.Name }}{{ end }}.192.168.1.244.xip.io
     http:
       paths:
-      - path: /lensData
+      - path: /
         backend:
           serviceName: {{ .Chart.Name }}-svc
           servicePort: 8080
