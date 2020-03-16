@@ -61,13 +61,13 @@ data:
             }
             location /lensData{
               proxy_set_header Host $host;
-               proxy_set_header X-Forwarded-Proto $scheme;
-               proxy_set_header X-Forwarded-Port $server_port;
-               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-               proxy_http_version 1.1;
-               proxy_read_timeout 900s;
-               proxy_buffering off;
-              proxy_pass http://apm-zhice-api-java-svc:8080/;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header X-Forwarded-Port $server_port;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_http_version 1.1;
+              proxy_read_timeout 900s;
+              proxy_buffering off;
+              proxy_pass http://apm-zhice-api-java-svc:8080;
             }
             error_page   500 502 503 504  /50x.html;
             location = /50x.html {

@@ -67,7 +67,7 @@ data:
               proxy_http_version 1.1;
               proxy_read_timeout 900s;
               proxy_buffering off;
-              proxy_pass http://apm-zhice-api-java-svc:8080/;
+              proxy_pass http://apm-zhice-api-java-svc:8080;
             }
             error_page   500 502 503 504  /50x.html;
             location = /50x.html {
