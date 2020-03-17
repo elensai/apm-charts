@@ -76,6 +76,6 @@ data:
     var HIDE_BAR = {{ if .Values.global.hidebar }}{{ .Values.global.hidebar }}{{ else }}{{ .Values.hidebar}}{{ end }};
 
     // 写死的case_id
-    CASE_ID = 817845123;
+    CASE_ID = 238454784;
 
     

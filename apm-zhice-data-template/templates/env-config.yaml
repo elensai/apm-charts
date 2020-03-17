@@ -34,5 +34,5 @@ data:
     var HIDE_BAR = {{ if .Values.global.hidebar }}{{ .Values.global.hidebar }}{{ else }}{{ .Values.hidebar}}{{ end }};
 
     // 写死的case_id
-    window.CASE_ID = 817845123;
+    window.CASE_ID = 238454784;
         
