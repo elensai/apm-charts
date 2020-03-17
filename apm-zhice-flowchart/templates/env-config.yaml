@@ -7,7 +7,7 @@ data:
   env-config: |-
     var ENV_OUTPUT_MAP_PATTERN_DATASET = {{ .Values.ENV_OUTPUT_MAP_PATTERN_DATASET }};
 
-    var ENV_ACTION_ADDFLOWCHARTDATA = {{ .Values.ENV_OUTPUT_FLOW_LIST }};
+    var ENV_ACTION_ADDFLOWCHARTDATA = {{ .Values.ENV_ACTION_ADDFLOWCHARTDATA }};
 
     var API_URL = {
       BASIC: {

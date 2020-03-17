@@ -25,6 +25,11 @@ data:
               url: 'http://apm-zhice-visual.192.168.1.244.xip.io/visual',
             }, 
             {
+              alias: 'apm-zhice-data-template',
+              label: '模板管理',
+              url: 'http://apm-zhice-template.192.168.1.244.xip.io/templates',
+            }, 
+            {
               alias: 'apm-zhice-mapvisual',
               label: '时空分析',
               url: 'http://apm-zhice-mapvisual.192.168.1.244.xip.io/mapvisual',
