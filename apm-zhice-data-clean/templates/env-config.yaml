@@ -10,7 +10,6 @@ data:
         var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.ENV_OUTPUT_TEMPLATE_LIST }};
         var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.ENV_OUTPUT_TEMPLATE_DETAIL }};
         var ENV_ACTION_ADD = {{ .Values.ENV_ACTION_ADD }};
-        var ENV_ACTION_DATAETLRESULT = {{ .Values.ENV_ACTION_DATAETLRESULT }};
         
         var API_URL = {
           BASIC: {
