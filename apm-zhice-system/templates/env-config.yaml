@@ -27,7 +27,7 @@ data:
             {
               alias: 'apm-zhice-data-template',
               label: '模板管理',
-              url: 'http://apm-zhice-template.192.168.1.244.xip.io/templates',
+              url: 'http://apm-zhice-data-template.192.168.1.244.xip.io/templates',
             }, 
             {
               alias: 'apm-zhice-mapvisual',
