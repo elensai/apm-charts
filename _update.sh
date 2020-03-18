@@ -22,8 +22,8 @@ while read i
 do
   echo "$i";
   rm -rf ./$i/charts/*
-  helm dep update $i
-  helm package $i
+  sudo helm dep update $i
+  sudo helm package $i
   curl --data-binary "@${i}-0.1.0.tgz" http://192.168.1.244:22317/api/charts
   echo "\n"
 done < list.md
