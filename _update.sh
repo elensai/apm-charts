@@ -44,7 +44,7 @@ done < list.md
 
 rm -f apm*tgz
 
-git add . ; git commit -m "$commit"; git push origin master
+git add . && git commit -m "$commit" && git push origin master
 
 # ------
 
