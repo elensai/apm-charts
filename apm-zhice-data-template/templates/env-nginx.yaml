@@ -45,8 +45,8 @@ data:
 
                 location / {
                     root  /html;
-                    index  templates.html templates.htm;
-                    try_files $uri $uri /templates.html;
+                    index  index.html index.htm;
+                    try_files $uri $uri /index.html;
                 }
                 error_page  404              /404.html;
                 location /api {
