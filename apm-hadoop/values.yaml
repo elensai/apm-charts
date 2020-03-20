@@ -17,7 +17,7 @@ apm_Capacity: 1Gi
 apm_StoragePath: /nfsdata/
 
 
-volumeinit: true
+volumeinit: false
 volumenum:
 - num: "0"
 - num: "1"
