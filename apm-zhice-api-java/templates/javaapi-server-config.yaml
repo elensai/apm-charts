@@ -28,7 +28,7 @@ data:
       <DATASET_PATH>/EML/lensData</DATASET_PATH>
       <DOWNLOAD_PATH>src/main/webapp/dowload/</DOWNLOAD_PATH>
       <MODULE_PATH>/EML/lensData</MODULE_PATH>
-      <PROGRAMS_PATH>/EML/Programs</PROGRAMS_PATH>
+      <PROGRAMS_PATH>/EML/LensProcessData</PROGRAMS_PATH>
 
       <DB_HOST>apm-mysql-svc</DB_HOST>
       <DB_PORT>3306</DB_PORT>
