@@ -27,7 +27,7 @@ data:
       <DRAFT_PATH>/EML/draft</DRAFT_PATH>
       <DATASET_PATH>/EML/lensData</DATASET_PATH>
       <DOWNLOAD_PATH>src/main/webapp/dowload/</DOWNLOAD_PATH>
-      <MODULE_PATH>/EML/Modules</MODULE_PATH>
+      <MODULE_PATH>/EML/lensData</MODULE_PATH>
       <PROGRAMS_PATH>/EML/Programs</PROGRAMS_PATH>
 
       <DB_HOST>apm-mysql-svc</DB_HOST>
