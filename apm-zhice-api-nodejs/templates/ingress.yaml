@@ -4,7 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-ingress
 spec:
   rules:
-  - host: {{ if .Values.app_host }}{{ .Values.app_host }}{{ else }}{{ .Chart.Name }}{{ end }}.192.168.1.244.xip.io
+  - host: {{ if .Values.global.app_host }}{{ .Values.global.app_host }}_{{ .Chart.Name }}{{ else }}{{ .Chart.Name }}{{ end }}.{{ .Values.global.domain }}
     http:
       paths:
       - path: /api
