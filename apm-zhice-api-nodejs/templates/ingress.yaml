@@ -4,7 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-ingress
 spec:
   rules:
-  - host: {{ if .Values.global.app_host }}{{ .Values.global.app_host }}_{{ .Chart.Name }}{{ else }}{{ .Chart.Name }}{{ end }}.{{ .Values.global.domain }}
+  - host: {{ if .Values.global.app_host }}{{ .Values.global.app_host }}-{{ .Chart.Name }}{{ else }}{{ .Chart.Name }}{{ end }}.{{ .Values.global.domain }}
     http:
       paths:
       - path: /api
