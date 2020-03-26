@@ -7,8 +7,29 @@ data:
   env-config: |-
     var ENV_OUTPUT_MAP_PATTERN_DATASET = {{ .Values.ENV_OUTPUT_MAP_PATTERN_DATASET }};
 
-    var ENV_ACTION_ADDFLOWCHARTDATA = {{ .Values.ENV_ACTION_ADDFLOWCHARTDATA }};
+    var ENV_ACTION_IMPORTLIST = {{ .Values.ENV_ACTION_IMPORTLIST }};
 
+    var ENV_OUTPUT_FLOW_LIST = {
+      name: "流向分析记录列表",
+      alias: "data-list",
+      getMethods: {
+        type: 'API',
+        url: '/graphic',
+        parameter: { // 调用URL时需要带的参数
+          case_id: '817845123',
+          page_size: {
+            type: Number,
+            default: 1000
+          },
+          type: "2",
+        }
+      },
+      getContents: { // 获取内容
+        category: '流向分析/数据列表', //内容分类，格式为： 应用名称/数据分类
+        fields: { // 接口返回的内容字段
+        }
+      }
+    };
     var API_URL = {
       BASIC: {
         BASE_URL: '/api',

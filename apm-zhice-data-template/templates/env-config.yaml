@@ -5,25 +5,85 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var API_URL = {
-      BASIC: {
-        BASE_URL: '/api',
-        HOST:'',
-        PORT: "",
-        TEMPLATE: {
-          url: '/template',
-        },
-        MODEL: { // object/getModels 获取实体类型列表
-          url: '/model',
-        },
-        IMPORT_DATA: { // 导入数据
-          url: '/dataset/import'
-        },
-        UPLOAD: {
-          url: '/upload',
+    var API_URL = (function() {
+        var apiBaseUrl =  '/api';
+        var bigDataUrl = '/lensData';
+        var config = {
+          BASIC: {
+            TEMPLATE: {
+              url: '/template',
+            },
+            MODEL: { // object/getModels 获取实体类型列表
+              url: '/model',
+            },
+            IMPORT_DATA: { // 导入数据
+              url: '/dataset/import'
+            },
+            UPLOAD: {
+              url: '/upload',
+            }
+          },
+          BIG_DATA: {
+            
+          },
+        };
+        var joinUrl = function(prefix, data) {
+          for(var i in data) {
+            data[i].url = prefix + data[i].url;
+          }
         }
-      },
-    }
+        joinUrl(apiBaseUrl, config.BASIC);
+        joinUrl(bigDataUrl, config.BIG_DATA);
+        config.apiBaseUrl = apiBaseUrl;
+        config.bigDataUrl = bigDataUrl;
+        config.getBasicDataUrl = function(key) {
+          return config.BASIC[key] && config.BASIC[key].url || '';
+        };
+
+        config.getBigDataUrl = function(key) {
+          return config.BIG_DATA[key] && config.BIG_DATA[key].url || '';
+        };
+
+        return config;
+      })();
+      var ENV_OUTPUT_PATTERN_LIST = {
+        name: "分析模型列表",
+        alias: "data-list",
+        getMethods: {
+          type: 'API',
+          url: '/pattern',
+          parameter: { // 调用URL时需要带的参数
+            page_size: {
+              type: Number,
+              default: 1000
+            }
+          }
+        },
+        getContents: { // 获取内容
+          category: '模板管理/模型列表', //内容分类，格式为： 应用名称/数据分类
+          fields: { // 接口返回的内容字段
+          }
+        }
+      };
+
+      var ENV_OUTPUT_PATTERN_DETAIL = {
+        name: "分析模型详情",
+        alias: "data-list",
+        getMethods: {
+          type: 'API',
+          url: '/pattern',
+          parameter: { // 调用URL时需要带的参数
+
+          }
+        },
+        getContents: { // 获取内容
+          category: '模板管理/模型详情', //内容分类，格式为： 应用名称/数据分类
+          fields: { // 接口返回的内容字段
+          }
+        }
+      };
+
+
 
     var APM_CONFIG = {
       alias: '{{ .Chart.Name }}', // 当前子模块别称

@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_ACTION_ADDMAPVISUALDATA = {{ .Values.ENV_ACTION_ADDMAPVISUALDATA }};
+    var ENV_ACTION_IMPORTLIST = {{ .Values.ENV_ACTION_IMPORTLIST }};
 
     var API_URL = {
       BASIC: {
