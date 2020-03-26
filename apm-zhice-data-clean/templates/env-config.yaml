@@ -10,57 +10,68 @@ data:
         var ENV_OUTPUT_TEMPLATE_LIST = {{ .Values.ENV_OUTPUT_TEMPLATE_LIST }};
         var ENV_OUTPUT_TEMPLATE_DETAIL = {{ .Values.ENV_OUTPUT_TEMPLATE_DETAIL }};
         var ENV_ACTION_ADD = {{ .Values.ENV_ACTION_ADD }};
-        
-        var API_URL = {
-          BASIC: {
-            BASE_URL: '/api',
-            HOST:'',
-            PORT: "",
-            // 真正的地址和端口
-            // BASE_URL: '/api/api',
-            // 192.168.1.78:8018
-            HOST:'',
-            PORT: '',
-            DATA_SOURCE_LIST: {
-              name: "数据文件列表",
-              url: "/data_source"
+        var ENV_ACTION_IMPORTFLOWCHART = {{ .Values.ENV_ACTION_IMPORTFLOWCHART }};
+        var ENV_ACTION_IMPORTVISUAL = {{ .Values.ENV_ACTION_IMPORTVISUAL }};
+        var ENV_ACTION_IMPORTMAPVISUAL = {{ .Values.ENV_ACTION_IMPORTMAPVISUAL }};
+        var ENV_ACTION_IMPORTLIST = {{ .Values.ENV_ACTION_IMPORTLIST }};
+        var API_URL = (function(){
+          var apiBaseUrl =  '/api';
+          var bigDataUrl = '/lensData'
+          var config = {
+            BASIC: {
+              DATA_SOURCE_LIST: {
+                name: "数据文件列表",
+                url: "/data_source"
+              },
+              TEMPLATE_LIST: {
+                name: "模型列表",
+                url: "/template"
+              },
+              TEMPLATE_DETAIL: {
+                name: "模型详情",
+                url: "/template"
+              },
+              // 输出
+              OUTPUT_LIST: {
+                name: "数据清洗结果列表",
+                url: "/dataset"
+              },
+          
             },
-            TEMPLATE_LIST: {
-              name: "模型列表",
-              url: "/template"
+            BIG_DATA: {
+              DATA_SOURCE_DETAIL: {
+                name: "数据文件详情",
+                url: "/lensData/getRawData"
+              },
+              // 输出
+              OUTPUT_DETAIL: {
+                name: "数据清洗结果详情",
+                url: "/lensData/getResultSet"
+              }
             },
-            TEMPLATE_DETAIL: {
-              name: "模型详情",
-              url: "/template"
-            },
-            // 输出
-            OUTPUT_LIST: {
-              name: "数据清洗结果列表",
-              url: "/dataset"
-            },
+            ENV_DATASET_URL: '192.168.1.244:8888',
+          };
 
-          },
-          BIG_DATA: {
-            BASE_URL: '/lensData',
-            HOST:'',
-            PORT: "",
-            // 真正的地址和端口
-            // BASE_URL: '/lensData',
-            // 192.168.1.78:8018
-            // HOST:'',
-            // PORT: '',
-            DATA_SOURCE_DETAIL: {
-              name: "数据文件详情",
-              url: "/lensData/getRawData"
-            },
-            // 输出
-            OUTPUT_DETAIL: {
-              name: "数据清洗结果详情",
-              url: "/lensData/getResultSet"
+          var joinUrl = function(prefix, data) {
+            for(var i in data) {
+              data[i].url = prefix + data[i].url;
             }
-          },
+          }
+          joinUrl(apiBaseUrl, config.BASIC);
+          joinUrl(bigDataUrl, config.BIG_DATA);
+          config.apiBaseUrl = apiBaseUrl;
+          config.bigDataUrl = bigDataUrl;
+          config.getBasicDataUrl = function(key) {
+            return config.BASIC[key] && config.BASIC[key].url || '';
+          };
 
-        }
+          config.getBigDataUrl = function(key) {
+            return config.BIG_DATA[key] && config.BIG_DATA[key].url || '';
+          };
+
+          return config;
+        })();
+
 
         var APM_CONFIG = {
           alias: 'apm-zhice-data-clean', // 当前子模块别称
