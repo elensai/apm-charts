@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Chart.Name }}-env-config
+  namespace: {{ .Release.Namespace }}
+data:
+  env-config: |-
+      var BASE_URL = 'http://192.168.1.244:8571';
+      var APM_CONFIG = {
+        alias: 'apm-zhiwen-web-search', // 当前子模块别称
+        messageOrigin: '*', // apm壳子部署域名
+        padding: [0, 0, 0, 0], // apm壳子中iframe的偏移量 上 右 下 左 单位 px
+      };
+      var HIDE_BAR = false;
+      var DEFAULTRECOID=68800143;
+      var DEFAULTIDCARDFRONT=978104848;
+      var DEFAULTIDCARDBACK=89729762;
+      var QUOTAINVOCE=592559737;
+      var LICENSEPLATE=863538567;
+      var VATINVIOCE=150834199;
+      window.BASE_URL = BASE_URL;
+      window.APM_CONFIG = APM_CONFIG;
+      window.HIDE_BAR = HIDE_BAR;  
+
+
+    
