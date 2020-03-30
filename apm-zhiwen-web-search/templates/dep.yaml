@@ -19,7 +19,7 @@ spec:
           image: {{.Values.image_name}}:{{ .Chart.AppVersion }}
           imagePullPolicy: IfNotPresent
           ports:
-            - name: zhiwensearch-port
+            - name: zhiwen-port
               containerPort: 80
               protocol: TCP   
           volumeMounts:
