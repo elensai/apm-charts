@@ -18,3 +18,4 @@ apm-zhice-data-import
 apm-zhice-visual
 apm-zhice-system
 apm-zhiwen-web-search
+apm-zhiwen-api
