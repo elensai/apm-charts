@@ -1,0 +1,21 @@
+# Default values for apm-zhiwen-web-search.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image_name: registry.elensdata.com/zhice-apm/zhiwen-api
+
+# ENV_OUTPUT_DATA_LIST: ''
+
+# ENV_OUTPUT_DATA_DETAIL: ''
+
+# ENV_OUTPUT_TEMPLATE_LIST: ''
+
+# ENV_OUTPUT_TEMPLATE_DETAIL: ''
+
+# ENV_ACTION_ADD: ''
+
+direction: 'left'
+
+padding: '[0, 0, 0, 0]'
+
+hidebar: false
