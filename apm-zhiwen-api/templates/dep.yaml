@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: con
-          image: {{.Values.imageApp}}:{{.Chart.AppVersion}}
+          image: {{.Values.image_name}}:{{.Chart.AppVersion}}
           imagePullPolicy: IfNotPresent
           ports:
             - name: app-port
