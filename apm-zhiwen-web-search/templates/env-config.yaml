@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-      var BASE_URL = 'http://192.168.1.244:8571';
+      var BASE_URL = '';
       var APM_CONFIG = {
         alias: 'apm-zhiwen-web-search', // 当前子模块别称
         messageOrigin: '*', // apm壳子部署域名
