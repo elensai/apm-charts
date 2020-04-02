@@ -19,7 +19,7 @@ apm_Image:
 
 
 
-rabbitmq-port1: 15671
-rabbitmq-port2: 15672
+rabbitmq_port1: 15671
+rabbitmq_port2: 15672
 
 
