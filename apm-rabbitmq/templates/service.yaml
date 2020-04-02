@@ -11,10 +11,10 @@ spec:
     - port: {{ .Values.rabbitmq_port1 }}
       targetPort: rabbitmq-port1
       protocol: TCP
-      name: http
+      name: http-1
     - port: {{ .Values.rabbitmq_port2 }}
       targetPort: rabbitmq-port2
       protocol: TCP
-      name: http  
+      name: http-2  
   selector:
     app: {{ .Chart.Name }}-pod
