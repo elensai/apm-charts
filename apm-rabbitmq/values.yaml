@@ -1,0 +1,25 @@
+# Default values for mysql.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+###父级传入
+# 备用命名空间
+global:
+  app_namespace_bak: 
+
+apm_ReplicaCount: 1
+
+
+
+apm_Image:
+  repository: registry.elensdata.com/elensai/rabbitmq
+  pullPolicy: IfNotPresent
+  imagePullSecrets: []
+
+
+
+rabbitmq_port1: 15671
+rabbitmq_port2: 15672
+
+

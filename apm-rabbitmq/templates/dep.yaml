@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-dep
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Chart.Name }}-dep
+spec:
+  replicas: {{ .Values.apm_ReplicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-pod
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-pod
+    spec:
+      containers:
+        - name: con
+          image: {{ .Values.apm_Image.repository }}:{{ .Chart.AppVersion }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: rabbitmq-port1
+              containerPort: 15671
+            - name: rabbitmq-port2
+              containerPort: 15672
+      # tolerations:
+      #   - key: "key"
+      #     operator: "Equal"
+      #     value: "test02"
+      #     effect: "PreferNoSchedule"
+
+
