@@ -6,7 +6,7 @@ metadata:
   labels:
     svc: {{ .Chart.Name }}-svc
 spec:
-  type: {{ .Values.apm_Service.type }}
+  type: NodePort
   ports:
     - port: {{ .Values.rabbitmq_port1 }}
       targetPort: rabbitmq_port1
