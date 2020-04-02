@@ -8,12 +8,12 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: {{ .Values.rabbitmq_port1 }}
-      targetPort: rabbitmq_port1
+    - port: {{ .Values.rabbitmq-port1 }}
+      targetPort: rabbitmq-port1
       protocol: TCP
       name: http
-    - port: {{ .Values.rabbitmq_port2 }}
-      targetPort: rabbitmq_port2
+    - port: {{ .Values.rabbitmq-port2 }}
+      targetPort: rabbitmq-port2
       protocol: TCP
       name: http  
   selector:
