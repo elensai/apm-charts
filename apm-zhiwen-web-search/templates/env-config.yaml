@@ -6,7 +6,7 @@ metadata:
 data:
   env-config: |-
       // APM 拆分
-      var BASE_URL = '';
+      var BASE_URL = '.';
       var APM_CONFIG = {
         alias: 'apm-zhiwen-web-search', // 当前子模块别称
         messageOrigin: '*', // apm壳子部署域名
