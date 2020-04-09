@@ -17,5 +17,8 @@ apm-zhice-data-template
 apm-zhice-data-import
 apm-zhice-visual
 apm-zhice-system
+apm-zhiwen-web-chouqu
+apm-zhiwen-web-shibie
 apm-zhiwen-web-search
+apm-zhiwen-web-zhuanhuan
 apm-zhiwen-api
