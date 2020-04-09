@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ .Chart.Name }}-env-config
+  namespace: {{ .Release.Namespace }}
+data:
+  env-config: |-
+      // APM 拆分
+      var BASE_URL = '.';
+      var APM_CONFIG = {
+        alias: 'apm-zhiwen-web-chouqu', // 当前子模块别称
+        messageOrigin: '*', // apm壳子部署域名
+        padding: [0, 0, 0, 0], // apm壳子中iframe的偏移量 上 右 下 左 单位 px
+      };
+      var HIDE_BAR = false;
+      // 测试
+      var DEFAULTRECOID=597060599;
+      var DEFAULTIDCARDFRONT=446245441;
+      var DEFAULTIDCARDBACK=635619282;
+      var QUOTAINVOCE=533308125;
+      var LICENSEPLATE=348293188;
+      var VATINVIOCE=51577799;
+      var VEHICLEFRONT=575177276;
+      var VEHICLEBACK=228504371;
+      var DRIVING=682041173;
+      var BANKCARD=108068939;
+      var BUSSINESS=446000407;
+      var RECEIPT=463605374;
+      sessionStorage.setItem("DEFAULTRECOID", DEFAULTRECOID);
+      window.BASE_URL = BASE_URL;
+      window.APM_CONFIG = APM_CONFIG;
+      window.HIDE_BAR = HIDE_BAR;
+
+
+
+    
