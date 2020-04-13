@@ -45,6 +45,7 @@ data:
 
             location / {
                 root  /html;
+                index  index.html index.htm;
                 try_files $uri $uri/ /index.html;
             }
             #error_page  404              /404.html;
