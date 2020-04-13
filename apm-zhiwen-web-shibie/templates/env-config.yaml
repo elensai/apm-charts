@@ -31,6 +31,7 @@ data:
       window.BASE_URL = BASE_URL;
       window.APM_CONFIG = APM_CONFIG;
       window.HIDE_BAR = HIDE_BAR;
+      window.PATH = PATH;
 
 
 

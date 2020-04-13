@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}-ingress
+spec:
+  rules:
+  - host: {{ if .Values.global.app_host }}{{ .Values.global.app_host }}-{{ .Chart.Name }}{{ else }}{{ .Chart.Name }}{{ end }}.{{ .Values.global.domain }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: {{ .Chart.Name }}-svc
+          servicePort: 80
