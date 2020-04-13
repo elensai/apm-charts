@@ -5,58 +5,10 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   env-config: |-
-    var ENV_OUTPUT_SYSTEM_ASIDE_LIST =  {
-        getContents: {
-          category: '智策外壳tab输出列表',
-          fileds:[
-            {
-              alias: 'apm-zhice-data-source',
-              label: '数据源',
-              url: 'http://app-zhi-apm-zhice-data-source.192.168.1.244.xip.io/filemanagement',
-            },
-            {
-              alias: 'apm-zhice-data-clean',
-              label: '数据清洗',
-              url: 'http://app-zhi-apm-zhice-data-clean.192.168.1.244.xip.io/dataetl',
-            }, 
-            {
-              alias: 'apm-zhice-visual',
-              label: '关联分析',
-              url: 'http://app-zhi-apm-zhice-visual.192.168.1.244.xip.io/visual',
-            }, 
-            {
-              alias: 'apm-zhice-data-template',
-              label: '模板管理',
-              url: 'http://app-zhi-apm-zhice-data-template.192.168.1.244.xip.io/templates',
-            }, 
-            {
-              alias: 'apm-zhice-mapvisual',
-              label: '时空分析',
-              url: 'http://app-zhi-apm-zhice-mapvisual.192.168.1.244.xip.io/mapvisual',
-            }, 
-            {
-              alias: 'apm-zhice-reportcenter',
-              label: '报告中心',
-              url: 'http://app-zhi-apm-zhice-reportcenter.192.168.1.244.xip.io/snapshotSelection',
-            },
-            {
-              alias: 'apm-zhice-flowchart',
-              label: '流向分析',
-              // icon: './images/aside-2.png',
-              url: 'http://app-zhi-apm-zhice-flowchart.192.168.1.244.xip.io/flowchart',
-            },
-            {
-              alias: 'apm-zhice-data-import',
-              label: '导入管理',
-              // icon: './images/aside-2.png',
-              url: 'http://app-zhi-apm-zhice-data-import.192.168.1.244.xip.io/analyzableData',
-            }
-          ]
-        }
-      }
+    var ENV_OUTPUT_SYSTEM_ASIDE_LIST = {{ .Values.ENV_OUTPUT_SYSTEM_ASIDE_LIST}}
       var APM_CONFIG = {
         alias: '{{ .Chart.Name }}', // 当前子模块别称
-        messageOrigin: 'http://app-zhi-apm-zhice-system.192.168.1.244.xip.io', // apm壳子部署域名
+        messageOrigin: 'http://{{ .Values.global.app_host}}-{{ .Chart.Name }}.{{ .Values.global.app_domain}}', // apm壳子部署域名
         tabPosition: '{{ .Values.direction }}', // 切换tab的位置 left 左边 top 上边 
         padding: {{ .Values.padding }} // apm壳子中iframe的偏移量 上 右 下 左 单位 px 当tabPosition 为 left 时 值为 [54, 0, 0, 197] ，当tabPosition 为 top 时 值为 '[54, 0, 0, 0]'
       }

@@ -8,13 +8,13 @@ data:
       // APM 拆分
       var BASE_URL = '.';
       var APM_CONFIG = {
-        alias: 'apm-zhiwen-web-shibie', // 当前子模块别称
+        alias: 'apm-zhiwen-web-chouqu', // 当前子模块别称
         messageOrigin: 'http://{{ .Values.global.app_host}}-{{ .Values.global.app_wrapper_alias}}.{{ .Values.global.domain}}', // apm壳子部署域名
         padding: [0, 0, 0, 0], // apm壳子中iframe的偏移量 上 右 下 左 单位 px
       };
       var HIDE_BAR = true;
+      var PATH　= 'extractCard';
       // 测试
-      var PATH＝"/intellectRecog";
       var DEFAULTRECOID=597060599;
       var DEFAULTIDCARDFRONT=446245441;
       var DEFAULTIDCARDBACK=635619282;
