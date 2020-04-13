@@ -12,7 +12,7 @@ data:
         messageOrigin: 'http://{{ .Values.global.app_host}}-{{ .Values.global.app_wrapper_alias}}.{{ .Values.global.domain}}', // apm壳子部署域名
         padding: [0, 0, 0, 0], // apm壳子中iframe的偏移量 上 右 下 左 单位 px
       };
-      var PATH＝"/search";
+      var PATH = "/search";
       var HIDE_BAR = true;
       // 测试
       var DEFAULTRECOID=597060599;
