@@ -13,6 +13,7 @@ data:
         padding: [0, 0, 0, 0], // apm壳子中iframe的偏移量 上 右 下 左 单位 px
       };
       var HIDE_BAR = true;
+      var PATH　= '/extractTicketReceipt';
       // 测试
       var DEFAULTRECOID=440045904;
       var DEFAULTIDCARDFRONT=518721536;
@@ -31,6 +32,7 @@ data:
       window.BASE_URL = BASE_URL;
       window.APM_CONFIG = APM_CONFIG;
       window.HIDE_BAR = HIDE_BAR;
+      window.PATH = PATH;
 
 
 
